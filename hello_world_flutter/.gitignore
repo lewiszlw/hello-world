@@ -1,5 +1,3 @@
-*/target
-
 # Miscellaneous
 *.class
 *.lock
@@ -16,19 +14,19 @@
 *.iml
 *.ipr
 *.iws
-*/.idea
+.idea/
 
 # Visual Studio Code related
 .vscode/
 
 # Flutter/Dart/Pub related
-./hello_world_flutter/**/doc/api/
-./hello_world_flutter/.dart_tool/
-./hello_world_flutter/.flutter-plugins
-./hello_world_flutter/.packages
-./hello_world_flutter/.pub-cache/
-./hello_world_flutter/.pub/
-./hello_world_flutter/build/
+**/doc/api/
+.dart_tool/
+.flutter-plugins
+.packages
+.pub-cache/
+.pub/
+build/
 
 # Android related
 **/android/**/gradle-wrapper.jar
