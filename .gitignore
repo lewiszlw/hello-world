@@ -74,3 +74,6 @@
 
 # hello-world-c
 hello-world-c/cmake-build-debug
+
+# hello-world-python
+hello-world-python/venv
