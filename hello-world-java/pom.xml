@@ -12,14 +12,15 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <jmockit.version>1.42</jmockit.version>
   </properties>
 
   <dependencies>
+
+    <!--jmockit需要声明在junit之前-->
     <dependency>
       <groupId>org.jmockit</groupId>
       <artifactId>jmockit</artifactId>
-      <version>${jmockit.version}</version>
+      <version>1.36</version>
     </dependency>
 
     <dependency>
@@ -91,6 +92,13 @@
       <artifactId>guava</artifactId>
       <version>27.0.1-jre</version>
     </dependency>
+
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>servlet-api</artifactId>
+      <version>2.5</version>
+      <scope>provided</scope>
+    </dependency>
   </dependencies>
 
   <build>
@@ -103,18 +111,6 @@
           <source>1.8</source>
           <target>1.8</target>
           <encoding>UTF-8</encoding>
-        </configuration>
-      </plugin>
-
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>2.21.0</version> <!-- or some other version -->
-        <configuration>
-          <argLine>
-            -javaagent:${settings.localRepository}/org/jmockit/jmockit/${jmockit.version}/jmockit-${jmockit.version}.jar
-          </argLine>
-          <!-- ... -->
         </configuration>
       </plugin>
     </plugins>
