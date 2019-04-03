@@ -1,4 +1,4 @@
-package lewiszlw.jmockitexample;
+package lewiszlw.jmockit;
 
 import mockit.Mocked;
 import org.junit.Assert;

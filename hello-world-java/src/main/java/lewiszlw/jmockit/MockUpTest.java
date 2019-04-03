@@ -1,4 +1,4 @@
-package lewiszlw.jmockitexample;
+package lewiszlw.jmockit;
 
 import mockit.Mock;
 import mockit.MockUp;

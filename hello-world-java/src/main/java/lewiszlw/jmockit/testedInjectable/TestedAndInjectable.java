@@ -1,4 +1,4 @@
-package lewiszlw.jmockitexample.testedInjectable;
+package lewiszlw.jmockit.testedInjectable;
 
 import mockit.Expectations;
 import mockit.Injectable;

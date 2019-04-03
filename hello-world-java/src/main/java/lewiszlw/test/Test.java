@@ -1,5 +1,7 @@
 package lewiszlw.test;
 
+import io.netty.bootstrap.AbstractBootstrap;
+
 /**
  * Desc:
  * ------------------------------------
@@ -9,8 +11,7 @@ package lewiszlw.test;
  */
 public class Test {
 
-    public static void main(String[] args) throws InterruptedException {
-        System.out.println(1 & 10);
+    public static void main(String[] args) {
     }
 
 }

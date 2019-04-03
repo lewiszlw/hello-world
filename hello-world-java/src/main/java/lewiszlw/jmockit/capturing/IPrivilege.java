@@ -1,4 +1,4 @@
-package lewiszlw.jmockitexample.capturing;
+package lewiszlw.jmockit.capturing;
 
 /**
  * Desc:
