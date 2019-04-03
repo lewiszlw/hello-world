@@ -8,6 +8,8 @@
 
 [《Java并发编程的艺术》](https://github.com/lewiszlw/hello-world/tree/master/hello-world-java/src/main/java/lewiszlw/_TheArtOfJavaConcurrencyProgramming)
 
+[Jmockit](https://github.com/lewiszlw/hello-world/tree/master/hello-world-java/src/main/java/lewiszlw/jmockit)
+
 ### hello_world_flutter
 [Whatsapp简单模仿](https://github.com/lewiszlw/hello-world/tree/master/hello_world_flutter/lib/apps/whatsapp)
 
