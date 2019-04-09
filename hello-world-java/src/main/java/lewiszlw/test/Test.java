@@ -1,7 +1,5 @@
 package lewiszlw.test;
 
-import io.netty.bootstrap.AbstractBootstrap;
-
 /**
  * Desc:
  * ------------------------------------
@@ -12,6 +10,10 @@ import io.netty.bootstrap.AbstractBootstrap;
 public class Test {
 
     public static void main(String[] args) {
+        String s1 = "22400000";
+        String s2 = "22400000";
+        System.out.println(s1 == s2);
     }
+
 
 }
