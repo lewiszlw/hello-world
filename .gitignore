@@ -78,3 +78,6 @@ hello-world-c/cmake-build-debug
 
 # hello-world-python
 hello-world-python/venv
+
+# hello-world-spring
+hello-world-spring/multi-module/.idea
