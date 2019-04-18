@@ -1,4 +1,4 @@
-package lewiszlw.beanutils.copyproperties;
+package lewiszlw.copyproperties;
 
 import lombok.Data;
 

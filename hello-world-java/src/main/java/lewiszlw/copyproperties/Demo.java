@@ -1,4 +1,4 @@
-package lewiszlw.beanutils.copyproperties;
+package lewiszlw.copyproperties;
 
 import org.springframework.beans.BeanUtils;
 
@@ -20,7 +20,7 @@ public class Demo {
 
         Student student = new Student();
 
-        BeanUtils.copyProperties(person,student);
+        BeanUtils.copyProperties(person,student, "email");
 
         System.out.println(student.getName());
         System.out.println(student.getAge());
