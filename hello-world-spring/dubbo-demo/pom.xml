@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>lewiszlw</groupId>
+	<artifactId>dubbo-demo</artifactId>
+    <packaging>pom</packaging>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>dubbo-demo</name>
+	<description>Demo project for Spring Boot</description>
+
+	<modules>
+		<module>dubbo-demo-client</module>
+		<module>dubbo-demo-interface</module>
+		<module>dubbo-demo-server</module>
+	</modules>
+
+	<properties>
+		<java.version>1.8</java.version>
+		<spring-boot.version>2.1.1.RELEASE</spring-boot.version>
+		<dubbo.version>2.7.1</dubbo.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>lewiszlw</groupId>
+				<artifactId>dubbo-demo-interface</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>lewiszlw</groupId>
+				<artifactId>dubbo-demo-server</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>lewiszlw</groupId>
+				<artifactId>dubbo-demo-client</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.projectlombok</groupId>
+				<artifactId>lombok</artifactId>
+				<version>1.18.6</version>
+				<optional>true</optional>
+			</dependency>
+
+
+            <!--spring boot-->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter</artifactId>
+                <version>${spring-boot.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-web</artifactId>
+				<version>${spring-boot.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-test</artifactId>
+				<version>${spring-boot.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.dubbo</groupId>
+				<artifactId>dubbo-spring-boot-starter</artifactId>
+				<version>2.7.1</version>
+			</dependency>
+
+			<!-- Dubbo -->
+			<dependency>
+				<groupId>org.apache.dubbo</groupId>
+				<artifactId>dubbo</artifactId>
+				<version>2.7.1</version>
+				<exclusions>
+					<exclusion>
+						<groupId>org.springframework</groupId>
+						<artifactId>spring</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>javax.servlet</groupId>
+						<artifactId>servlet-api</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>log4j</groupId>
+						<artifactId>log4j</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>org.springframework</groupId>
+						<artifactId>spring-context</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+
+			<!-- Zookeeper dependencies -->
+			<dependency>
+				<groupId>org.apache.dubbo</groupId>
+				<artifactId>dubbo-dependencies-zookeeper</artifactId>
+				<version>2.7.1</version>
+				<type>pom</type>
+			</dependency>
+
+			 <!--Spring Boot-->
+			<!--<dependency>-->
+				<!--<groupId>org.springframework.boot</groupId>-->
+				<!--<artifactId>spring-boot-dependencies</artifactId>-->
+				<!--<version>${spring-boot.version}</version>-->
+				<!--<type>pom</type>-->
+				<!--<scope>import</scope>-->
+			<!--</dependency>-->
+<!---->
+			 <!--Aapche Dubbo-->
+			<!--<dependency>-->
+				<!--<groupId>org.apache.dubbo</groupId>-->
+				<!--<artifactId>dubbo-dependencies-bom</artifactId>-->
+				<!--<version>${dubbo.version}</version>-->
+				<!--<type>pom</type>-->
+				<!--<scope>import</scope>-->
+			<!--</dependency>-->
+<!---->
+			<!--<dependency>-->
+				<!--<groupId>org.apache.dubbo</groupId>-->
+				<!--<artifactId>dubbo</artifactId>-->
+				<!--<version>${dubbo.version}</version>-->
+				<!--<exclusions>-->
+					<!--<exclusion>-->
+						<!--<groupId>org.springframework</groupId>-->
+						<!--<artifactId>spring</artifactId>-->
+					<!--</exclusion>-->
+					<!--<exclusion>-->
+						<!--<groupId>javax.servlet</groupId>-->
+						<!--<artifactId>servlet-api</artifactId>-->
+					<!--</exclusion>-->
+					<!--<exclusion>-->
+						<!--<groupId>log4j</groupId>-->
+						<!--<artifactId>log4j</artifactId>-->
+					<!--</exclusion>-->
+				<!--</exclusions>-->
+			<!--</dependency>-->
+		</dependencies>
+	</dependencyManagement>
+
+	<!--<dependencies>-->
+		 <!--Dubbo Spring Boot Starter-->
+		<!--<dependency>-->
+			<!--<groupId>org.apache.dubbo</groupId>-->
+			<!--<artifactId>dubbo-spring-boot-starter</artifactId>-->
+			<!--<version>2.7.1</version>-->
+		<!--</dependency>-->
+<!---->
+		<!--<dependency>-->
+			<!--<groupId>org.apache.dubbo</groupId>-->
+			<!--<artifactId>dubbo</artifactId>-->
+		<!--</dependency>-->
+	<!--</dependencies>-->
+
+
+	<build>
+        <pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>1.3.5.RELEASE</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+</project>
