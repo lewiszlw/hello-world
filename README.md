@@ -12,6 +12,7 @@
 
 ### hello-world-spring
 - [多模块项目实践](https://github.com/lewiszlw/hello-world/tree/master/hello-world-spring/multi-module)
+- [Dubbo示例（基于Springboot）](https://github.com/lewiszlw/hello-world/tree/master/hello-world-spring/dubbo-demo)
 
 ### hello_world_flutter
 - [Whatsapp简单模仿](https://github.com/lewiszlw/hello-world/tree/master/hello_world_flutter/lib/apps/whatsapp)
