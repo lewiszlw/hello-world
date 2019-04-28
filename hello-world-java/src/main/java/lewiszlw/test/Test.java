@@ -1,5 +1,7 @@
 package lewiszlw.test;
 
+import java.util.Objects;
+
 /**
  * Desc:
  * ------------------------------------
@@ -10,9 +12,6 @@ package lewiszlw.test;
 public class Test {
 
     public static void main(String[] args) {
-        String s1 = "22400000";
-        String s2 = "22400000";
-        System.out.println(s1 == s2);
     }
 
 
