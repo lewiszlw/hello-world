@@ -1,4 +1,4 @@
-package lewiszlw.doublecompare;
+package lewiszlw.javase.doublecompare;
 
 /**
  * Desc:

@@ -1,4 +1,4 @@
-package lewiszlw.generictype;
+package lewiszlw.javase.generictype;
 
 import java.util.ArrayList;
 import java.util.List;

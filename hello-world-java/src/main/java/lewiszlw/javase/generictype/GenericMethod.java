@@ -1,4 +1,4 @@
-package lewiszlw.generictype;
+package lewiszlw.javase.generictype;
 
 /**
  * Desc:
