@@ -1,4 +1,4 @@
-package lewiszlw.deadlock;
+package lewiszlw.lock.deadlock;
 
 /**
  * Desc:

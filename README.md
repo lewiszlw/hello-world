@@ -8,6 +8,12 @@
 
 - [《Java并发编程的艺术》](https://github.com/lewiszlw/hello-world/tree/master/hello-world-java/src/main/java/lewiszlw/_TheArtOfJavaConcurrencyProgramming)
 
+- [Java8](https://github.com/lewiszlw/hello-world/tree/master/hello-world-java/src/main/java/lewiszlw/java8)
+
+- [JavaSE](https://github.com/lewiszlw/hello-world/tree/master/hello-world-java/src/main/java/lewiszlw/javase)
+
+- [Google Guava](https://github.com/lewiszlw/hello-world/tree/master/hello-world-java/src/main/java/lewiszlw/guava)
+
 - [Jmockit](https://github.com/lewiszlw/hello-world/tree/master/hello-world-java/src/main/java/lewiszlw/jmockit)
 
 ### hello-world-spring
