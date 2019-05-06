@@ -1,7 +1,6 @@
-package lewiszlw.concurrency;
+package lewiszlw.javase.concurrency;
 
 import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.TimeUnit;
 
 /**
  * Desc: CountDownLatch使用示例
