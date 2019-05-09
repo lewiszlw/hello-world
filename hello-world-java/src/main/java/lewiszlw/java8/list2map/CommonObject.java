@@ -3,6 +3,7 @@ package lewiszlw.java8.list2map;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
 
 /**
  * Desc:

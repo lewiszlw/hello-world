@@ -15,11 +15,11 @@ import java.util.stream.Collectors;
 public class ListSort {
     public static void main(String[] args) throws InterruptedException {
         List<Obj> list = new ArrayList<>();
-        Obj obj1 = Obj.builder().date(new Date().toString()).desc("1").build();
+        Obj obj1 = Obj.builder().date(new Date().toString()).desc("1").code(2).build();
         Thread.sleep(3000);
-        Obj obj2 = Obj.builder().date(new Date().toString()).desc("2").build();
+        Obj obj2 = Obj.builder().date(new Date().toString()).desc("2").code(1).build();
         Thread.sleep(3000);
-        Obj obj3 = Obj.builder().date(new Date().toString()).desc("3").build();
+        Obj obj3 = Obj.builder().date(new Date().toString()).desc("3").code(3).build();
         list.add(obj2);
         list.add(obj3);
         list.add(obj1);
@@ -27,6 +27,11 @@ public class ListSort {
         list = list.stream().sorted(Comparator.comparing(Obj::getDate)).collect(Collectors.toList());
         for (Obj obj : list) {
             System.out.println(obj.getDate());
+        }
+
+        list = list.stream().sorted(Comparator.comparingInt(Obj::getCode)).collect(Collectors.toList());
+        for (Obj obj : list) {
+            System.out.println(obj.getCode());
         }
     }
 }

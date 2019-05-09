@@ -18,4 +18,6 @@ public class Obj {
     private String date;
 
     private String desc;
+
+    private Integer code;
 }
