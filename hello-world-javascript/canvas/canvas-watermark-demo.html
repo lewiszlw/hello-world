@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<body>
+    <h1>测试canvas生成图片水印</h1>
+    <canvas id="myCanvas" width="1000" height="500" >
+        Your browser does not support the HTML5 canvas tag.
+    </canvas>
+
+    <script type="text/javascript">
+        var img = new Image();   
+        img.src = './test-watermark.png'; 
+        // 待图片加载完成执行函数
+        img.onload=function(){
+            var canvas=document.getElementById("myCanvas");
+            var ctx=canvas.getContext("2d");
+            ctx.drawImage(img,0,0);
+            ctx.font="20px microsoft yahei";
+            ctx.fillStyle = "rgba(255,255,255,0.5)";
+            ctx.fillText("my images",100,100);
+            console.log(base64Url);
+        }
+
+    </script>
+</body>
