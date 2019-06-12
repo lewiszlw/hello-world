@@ -1,4 +1,4 @@
-package lewiszlw.jdkproxy;
+package lewiszlw.dynamicproxy.jdkproxy;
 
 /**
  * Desc:

@@ -1,4 +1,4 @@
-package lewiszlw.jdkproxy;
+package lewiszlw.dynamicproxy.jdkproxy;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationHandler;
