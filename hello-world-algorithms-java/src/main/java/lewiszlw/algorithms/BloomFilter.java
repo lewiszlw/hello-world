@@ -1,4 +1,4 @@
-package lewiszlw;
+package lewiszlw.algorithms;
 
 import java.util.BitSet;
 

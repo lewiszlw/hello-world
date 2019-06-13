@@ -1,5 +1,6 @@
 package lewiszlw;
 
+import lewiszlw.algorithms.BloomFilter;
 import org.junit.Assert;
 import org.junit.Test;
 
