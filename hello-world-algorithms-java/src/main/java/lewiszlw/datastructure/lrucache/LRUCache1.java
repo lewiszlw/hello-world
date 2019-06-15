@@ -1,4 +1,4 @@
-package lewiszlw.datastructure;
+package lewiszlw.datastructure.lrucache;
 
 import java.util.HashMap;
 import java.util.Map;

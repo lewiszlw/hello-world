@@ -1,5 +1,6 @@
 package lewiszlw.datastructure;
 
+import lewiszlw.datastructure.lrucache.LRUCache1;
 import org.junit.Assert;
 import org.junit.Test;
 
