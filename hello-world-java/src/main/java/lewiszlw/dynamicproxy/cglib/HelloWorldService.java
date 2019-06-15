@@ -10,4 +10,9 @@ public class HelloWorldService {
     public void sayHello(String greeting) {
         System.out.println("say: " + greeting);
     }
+
+
+    public void sayHello2(String greeting) {
+        System.out.println("say: " + greeting);
+    }
 }

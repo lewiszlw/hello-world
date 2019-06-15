@@ -21,5 +21,6 @@ public class Test {
 
         // 使用代理对象调用相关方法
         helloWorldService.sayHello("hello");
+        helloWorldService.sayHello2("hi");
     }
 }
