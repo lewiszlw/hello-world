@@ -20,8 +20,8 @@ import java.util.List;
 public class BucketSort {
 
     /**
-     *
-     * @param arr
+     * 如果取到合理的桶值，根据映射函数，我们可以将待排序数组均匀的分到每个桶中，
+     * 再分别对各个桶中的元素进行排序，最后我们直接输出桶中的数据就好。
      */
     public void sort(int[] arr) {
         // 找到最大值最小值
