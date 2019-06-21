@@ -16,6 +16,8 @@ public class SpiDemo {
         ServiceLoader<ISayName> iSayNames = ServiceLoader.load(ISayName.class);
         for (ISayName isayName : iSayNames) {
             isayName.sayName();
+            // 使用的AppClassLoader加载
+            System.out.println(isayName.getClass().getClassLoader());
         }
     }
 }
