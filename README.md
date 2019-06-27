@@ -61,3 +61,7 @@ bitmap使用java.util.BitSet，hash函数采用HashMap中的hash函数
 **4.[背包问题](https://github.com/lewiszlw/hello-world/tree/master/hello-world-algorithms-java/src/main/java/lewiszlw/problems/knapsack)**
 
 01背包问题
+
+**5.[栈排序](https://github.com/lewiszlw/hello-world/blob/master/hello-world-algorithms-java/src/main/java/lewiszlw/problems/SortStack.java)**
+
+简述：将一个栈内的元素进行升序（栈顶最大）排序，要求额外空间只能使用栈

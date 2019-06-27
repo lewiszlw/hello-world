@@ -40,7 +40,7 @@ public class LRUCache2<K, V> {
      */
     private DLinkedNode<K, V> tail;
 
-    LRUCache2 (int capacity) {
+    public LRUCache2 (int capacity) {
         if (capacity < 1) {
             throw new IllegalArgumentException("Illegal initial capacity: " + capacity);
         }
