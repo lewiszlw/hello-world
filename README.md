@@ -15,6 +15,7 @@
 - [多模块项目实践](https://github.com/lewiszlw/hello-world/tree/master/hello-world-spring/multi-module)
 - [Dubbo 示例](https://github.com/lewiszlw/hello-world/tree/master/hello-world-spring/dubbo-demo)
 - [RocketMQ 示例](https://github.com/lewiszlw/hello-world/tree/master/hello-world-spring/rocketmq-demo)
+- [阿里面试题：租房中介系统](https://github.com/lewiszlw/hello-world/tree/master/hello-world-spring/alibaba-interview-rental-intermediary)
 
 ## hello_world_flutter
 - [Whatsapp简单模仿](https://github.com/lewiszlw/hello-world/tree/master/hello_world_flutter/lib/apps/whatsapp)
