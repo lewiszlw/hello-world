@@ -11,11 +11,12 @@
 - [Jmockit](https://github.com/lewiszlw/hello-world/tree/master/hello-world-java/src/main/java/lewiszlw/jmockit)
 - [动态代理](https://github.com/lewiszlw/hello-world/tree/master/hello-world-java/src/main/java/lewiszlw/dynamicproxy)
 
-## hello-world-spring
+## hello-world-java-projects
 - [多模块项目实践](https://github.com/lewiszlw/hello-world/tree/master/hello-world-spring/multi-module)
 - [Dubbo 示例](https://github.com/lewiszlw/hello-world/tree/master/hello-world-spring/dubbo-demo)
 - [RocketMQ 示例](https://github.com/lewiszlw/hello-world/tree/master/hello-world-spring/rocketmq-demo)
 - [阿里面试题：租房中介系统](https://github.com/lewiszlw/hello-world/tree/master/hello-world-spring/alibaba-interview-rental-intermediary)
+- [Dagger 示例](https://github.com/lewiszlw/hello-world/tree/master/hello-world-java-projects/dagger-demo)
 
 ## hello_world_flutter
 - [Whatsapp简单模仿](https://github.com/lewiszlw/hello-world/tree/master/hello_world_flutter/lib/apps/whatsapp)
