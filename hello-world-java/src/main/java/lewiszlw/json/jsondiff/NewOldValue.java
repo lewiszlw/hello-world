@@ -1,4 +1,4 @@
-package lewiszlw.jsondiff;
+package lewiszlw.json.jsondiff;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

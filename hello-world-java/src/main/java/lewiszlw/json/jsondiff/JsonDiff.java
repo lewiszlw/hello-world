@@ -1,14 +1,10 @@
-package lewiszlw.jsondiff;
+package lewiszlw.json.jsondiff;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.util.JSONPObject;
 
 import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.util.*;
-import java.util.concurrent.TimeUnit;
 
 /**
  * Desc:
