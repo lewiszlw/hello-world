@@ -27,6 +27,8 @@ dev_dependencies:
   # startup_namer dependency
   english_words: ^3.1.0
 
+  provider: ^3.1.0+1
+
 
 # For information on the generic Dart part of this file, see the
 # following page: https://www.dartlang.org/tools/pub/pubspec
