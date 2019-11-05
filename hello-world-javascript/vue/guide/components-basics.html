@@ -1,0 +1,43 @@
+<html>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+
+    <!-- Basic Example -->
+    <div id="app">
+        <button-counter></button-counter>
+    </div>
+
+    <!-- Passing Data to Child Components with Props -->
+    <div id="app2">
+        <blog-post title="My journey with Vue"></blog-post>
+        <blog-post title="Blogging with Vue"></blog-post>
+        <blog-post title="Why Vue is so fun"></blog-post>
+    </div>
+</body>
+
+<script>
+    Vue.component('button-counter', {
+        // data must be a function
+        data: function () {
+            return {
+                count: 0
+            }
+        },
+        template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
+    })
+
+    Vue.component('blog-post', {
+        props: ['title'],
+        template: '<h3>{{ title }}</h3>'
+    })
+
+    var app = new Vue({ el: '#app' });
+
+    var app2 = new Vue({ el: '#app2' });
+</script>
+
+</html>

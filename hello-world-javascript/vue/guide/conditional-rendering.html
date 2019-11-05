@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+
+    <body>
+
+        <!-- v-if -->
+        <div id="app">
+            <h1 v-if="awesome">Vue is awesome!</h1>
+            <h1 v-else>On no</h1>
+
+            <!-- Conditional Groups with v-if on <template> -->
+            <template v-if="ok">
+                <h1>Title</h1>
+                <p>Paragraph 1</p>
+                <p>Paragraph 2</p>
+            </template>
+            <template v-else>
+                <h1>Title2</h1>
+                <p>Paragraph A</p>
+                <p>Paragraph B</p>
+            </template>
+
+            <!-- v-else-if -->
+            <div v-if="type === 'A'">
+                A
+            </div>
+            <div v-else-if="type === 'B'">
+                B
+            </div>
+            <div v-else-if="type === 'C'">
+                C
+            </div>
+            <div v-else>
+                Not A/B/C
+            </div>
+        </div>
+
+
+    </body>
+
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                awesome: true,
+                ok: false,
+                type: 'B'
+            }
+        })
+    </script>
+</html>

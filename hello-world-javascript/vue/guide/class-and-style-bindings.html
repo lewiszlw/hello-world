@@ -1,0 +1,111 @@
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+
+    <body>
+
+        <!--Binding HTML Classes-->
+        <!--Object Syntax-->
+        <div id="app" class="static" v-bind:class="{active: isActive, 'text-danger': hasError}">class1</div>
+        <br>
+        <div id="app-2" v-bind:class="classObject">class2</div>
+        <br>
+        <div id="app-3" v-bind:class="classObject">class3</div>
+        <!--Array Syntax-->
+        <div id="app-4" v-bind:class="[activeClass, errorClass]"></div>
+        <br>
+
+        <!--Binding Inline Styles-->
+        <!--Object Syntax-->
+        <div id="app-5" v-bind:style="{ color: activeColor, fontSize: fontSize + 'px'}">
+            Binding Inline Styles
+        </div>
+        <br>
+        <div id="app-6" v-bind:style="styleObject">
+            Binding Inline Styles2
+        </div>
+        <br>
+        <!--Array Syntax-->
+        <div id="app-7" v-bind:style="[baseStyles, overridingStyles]">
+            Binding Inline Styles3
+        </div>
+        
+
+    </body>
+
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                isActive: true,
+                hasError: true
+            }
+        })
+
+        var app2 = new Vue({
+            el: "#app-2",
+            data: {
+                classObject: {
+                    active: true,
+                    'text-danger': false
+                }
+            }
+        })
+
+        var app3 = new Vue({
+            el: "#app-3",
+            data: {
+                isActive: true,
+                error: null
+            },
+            computed: {
+                classObject: function() {
+                    return {
+                        active: this.isActive && !this.error,
+                        'text-danger': this.error && this.error.type === 'fatal'
+                    }
+                }
+            }
+        })
+
+        var app4 = new Vue({
+            el: "#app-4",
+            data: {
+                activeClass: 'active',
+                errorClass: 'text-danger'
+            }
+        })
+
+        var app5 = new Vue({
+            el:"#app-5",
+            data: {
+                activeColor: 'red',
+                fontSize: 30
+            }
+        })
+
+        var app6 = new Vue({
+            el:"#app-6",
+            data: {
+                styleObject: {
+                    color: 'blue',
+                    fontSize: '12px'
+                }
+            }
+        })
+
+        var app7 = new Vue({
+            el:"#app-7",
+            data: {
+                baseStyles: {
+                    color: 'blue',
+                    fontSize: '12px'
+                },
+                overridingStyles: {
+                    color: 'yellow',
+                }
+            }
+        })
+    </script>
+</html>

@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+
+    <body>
+
+        <!-- Listening to Events -->
+        <div id="example-1">
+            <button v-on:click="counter += 1">Add 1</button>
+            <p>The button above has been clicked {{ counter }} times.</p>
+        </div>
+
+        <!-- Method Event Handlers -->
+        <div id="example-2">
+            <button v-on:click="greet">Greet</button>
+        </div>
+        
+        <!-- Method in Inline Handlers -->
+        <div id="example-3">
+            <button v-on:click="say('hi')">Say hi</button>
+            <button v-on:click="say('what')">Say what</button>
+        </div>
+        
+
+    </body>
+
+    <script>
+        var example1 = new Vue({
+            el: "#example-1",
+            data: {
+                counter: 0
+            }
+        })
+
+        var example2 = new Vue({
+            el: '#example-2',
+            data: {
+                name: 'Vue.js'
+            },
+            methods: {
+                greet: function(event) {
+                    alert('Hello ' + this.name + '!')
+                    if (event) {
+                        alert(event.target.tagName)
+                    }
+                }
+            }
+        })
+
+        var example3 = new Vue({
+            el: '#example-3',
+            methods: {
+                say: function(message) {
+                    alert(message)
+                }
+            }
+        })
+    </script>
+</html>
