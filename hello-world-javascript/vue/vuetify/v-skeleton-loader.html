@@ -13,13 +13,15 @@
 
     <div id="app">
         <v-app id="inspire">
-          <div>
-            <v-card :loading="loading">
-                <v-card-title>Title</v-card-title>
-            </v-card>
-          </div>
+            <div>
+                <v-card>
+                    <v-card-title>Title</v-card-title>
+                    <v-card-text>Title</v-card-text>
+                    <v-skeleton-loader type="list-item-three-line"></v-skeleton-loader>
+                </v-card>
+            </div>
         </v-app>
-      </div>
+    </div>
 
 </body>
 
@@ -32,10 +34,10 @@
         vuetify: new Vuetify(),
         data() {
             return {
-                loading: true,
-                message: "hello"
+                transition: "a"
             }
         },
+
     })
 </script>
 

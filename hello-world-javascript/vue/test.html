@@ -14,9 +14,10 @@
     <div id="app">
         <v-app id="inspire">
           <div>
-            <v-card :loading="loading">
-                <v-card-title>Title</v-card-title>
-            </v-card>
+              <v-progress-linear
+                indeterminate
+                v-if="loading"
+              ></v-progress-linear>
           </div>
         </v-app>
       </div>
@@ -33,7 +34,6 @@
         data() {
             return {
                 loading: true,
-                message: "hello"
             }
         },
     })
