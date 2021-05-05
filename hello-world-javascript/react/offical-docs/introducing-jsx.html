@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@15.6.1/dist/react.min.js"></script>
+    <script src="https://unpkg.com/react-dom@15.6.1/dist/react-dom.min.js"></script>
+
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+
+</head>
+
+<div id="root"></div>
+
+<body>
+
+<script type="text/babel">
+    function formatName(user) {
+        return user.firstName + ' ' + user.lastName
+    }
+
+    function getGreeting() {
+        return <h1>Hello, Stranger</h1>;
+    }
+
+    const element2 = React.createElement(
+        'h1',
+        {className: 'greeting'},
+        'Hello, world!'
+    );
+
+    const user = {
+        firstName: 'Harper',
+        lastName: 'Perez'
+    };
+
+    const element = (
+        <div>
+            <h1>Hello, {formatName(user)}</h1>
+            {getGreeting()}
+            {element2}
+        </div>
+    );
+
+    ReactDOM.render(
+        element,
+        document.getElementById('root')
+    );
+
+</script>
+</body>
+</html>

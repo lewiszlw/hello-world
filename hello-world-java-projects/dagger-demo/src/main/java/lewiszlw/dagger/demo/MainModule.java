@@ -3,6 +3,8 @@ package lewiszlw.dagger.demo;
 import dagger.Module;
 import dagger.Provides;
 
+import javax.inject.Singleton;
+
 /**
  * Desc:
  *
@@ -13,11 +15,13 @@ import dagger.Provides;
 public class MainModule {
 
     @Provides
+    @Singleton
     public ServiceA provideServiceA() {
         return new ServiceA();
     }
 
     @Provides
+    @Singleton
     public ServiceB provideServiceB() {
         return new ServiceB();
     }

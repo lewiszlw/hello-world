@@ -61,31 +61,6 @@
 
                             <v-card-text>
                                 Let Google help apps determine location. This means sending anonymous location data to
-                                Let Google help apps determine location. This means sending anonymous location data to
-                                Let Google help apps determine location. This means sending anonymous location data to
-                                Let Google help apps determine location. This means sending anonymous location data to
-                                Let Google help apps determine location. This means sending anonymous location data to
-                                Let Google help apps determine location. This means sending anonymous location data to
-                                Let Google help apps determine location. This means sending anonymous location data to
-                                Let Google help apps determine location. This means sending anonymous location data to
-                                Let Google help apps determine location. This means sending anonymous location data to
-                                Let Google help apps determine location. This means sending anonymous location data to
-                                Let Google help apps determine location. This means sending anonymous location data to
-                                Let Google help apps determine location. This means sending anonymous location data to
-                                Google, even when no apps are running.
-                                Google, even when no apps are running.
-                                Google, even when no apps are running.
-                                Google, even when no apps are running.
-                                Google, even when no apps are running.
-                                Google, even when no apps are running.
-                                Google, even when no apps are running.
-                                Google, even when no apps are running.
-                                Google, even when no apps are running.
-                                Google, even when no apps are running.
-                                Google, even when no apps are running.
-                                Google, even when no apps are running.
-                                Google, even when no apps are running.
-                                Google, even when no apps are running.
                                 Google, even when no apps are running.
                             </v-card-text>
 
@@ -99,6 +74,35 @@
                     </v-dialog>
                 </v-row>
 
+                <v-row>
+                    <v-btn @click="dialog3 = true" text color="primary">See detail</v-btn>
+                    <v-dialog v-model="dialog3" max-width="700">
+                        <v-card>
+                            <v-card-text>
+                                <div v-for="(data, index) in dataList" :key="'data' + index">
+                                    <br/>
+                                    <h3>Use Google's location service?</h3>
+                                    <br />
+                                    <p>Let Google help apps determine location. This means sending anonymous location
+                                        data
+                                        to
+                                        Google, even when no apps are running.
+
+                                        {{ data }}
+                                    </p>
+                                </div>
+
+                            </v-card-text>
+
+                            <v-card-actions>
+                                <v-spacer></v-spacer>
+                                <v-btn color="green" text @click="dialog3 = false">
+                                    Close
+                                </v-btn>
+                            </v-card-actions>
+                        </v-card>
+                    </v-dialog>
+                </v-row>
             </div>
         </v-app>
     </div>
@@ -116,6 +120,9 @@
             return {
                 dialog: false,
                 dialog2: false,
+                dialog3: false,
+
+                dataList: ["a", "b", "c"]
             }
         },
     })

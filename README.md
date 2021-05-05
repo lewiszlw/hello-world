@@ -8,7 +8,7 @@
 - [Java8](https://github.com/lewiszlw/hello-world/tree/master/hello-world-java/src/main/java/lewiszlw/java8)
 - [JavaSE](https://github.com/lewiszlw/hello-world/tree/master/hello-world-java/src/main/java/lewiszlw/javase)
 - [Google Guava](https://github.com/lewiszlw/hello-world/tree/master/hello-world-java/src/main/java/lewiszlw/guava)
-- [Jmockit](https://github.com/lewiszlw/hello-world/tree/master/hello-world-java/src/main/java/lewiszlw/jmockit)
+- [Jmockit](https://github.com/lewiszlw/hello-world/tree/master/hello-world-java/src/main/java/lewiszlw/jmockit) / [Mockito](https://github.com/lewiszlw/hello-world/tree/master/hello-world-java/src/main/java/lewiszlw/mockito)
 - [动态代理](https://github.com/lewiszlw/hello-world/tree/master/hello-world-java/src/main/java/lewiszlw/dynamicproxy)
 
 ## hello-world-java-projects

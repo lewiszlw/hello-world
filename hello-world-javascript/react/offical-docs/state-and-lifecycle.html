@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@15.6.1/dist/react.min.js"></script>
+    <script src="https://unpkg.com/react-dom@15.6.1/dist/react-dom.min.js"></script>
+
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+
+</head>
+
+<div id="root"></div>
+
+<body>
+
+<script type="text/babel">
+
+class Clock extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {date: new Date()};
+    }
+
+    componentDidMount() {
+        this.timerID = setInterval(
+            () => this.tick(),
+            1000
+        );
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.timerID);
+    }
+
+    tick() {
+        this.setState({
+            date: new Date()
+        });
+    }
+
+    render() {
+        return (
+            <div>
+                <h1>Hello, World!</h1>
+                <h2>It is {this.state.date.toLocaleTimeString()}</h2>
+            </div>
+        );
+    }
+}
+
+function App() {
+    return (
+        // JSX expressions must have one parent element.
+        <div>
+            <Clock />
+            <Clock />
+            <Clock />
+        </div>
+    );
+}
+
+ReactDOM.render(
+//   <Clock />,
+  <App />,
+  document.getElementById('root')
+);
+
+</script>
+</body>
+</html>

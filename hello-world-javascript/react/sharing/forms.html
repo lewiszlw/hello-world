@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+    class NameForm extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = {
+            name: '',
+            hobby: ''
+        };
+
+        this.handleNameChange = this.handleNameChange.bind(this);
+        this.handleHobbyChange = this.handleHobbyChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+
+        this.ageInput = React.createRef();
+      }
+
+      handleNameChange(event) {
+        this.setState({name: event.target.value.toUpperCase()});
+      }
+
+      handleHobbyChange(event) {
+        this.setState({hobby: event.target.value});
+      }
+
+      handleSubmit(event) {
+        alert('Name: ' + this.state.name + ", Hobby: " + this.state.hobby + ", Age: " + this.ageInput.current.value);
+        event.preventDefault();
+      }
+
+      render() {
+        return (
+          <form onSubmit={this.handleSubmit}>
+
+            <label>
+              Name:
+              <input type="text" value={this.state.name} onChange={this.handleNameChange} />
+            </label>
+            <label>
+              Hobby:
+              <select value={this.state.hobby} onChange={this.handleHobbyChange}>
+                <option value="basketball">Basketball</option>
+                <option value="swimming">Swimming</option>
+                <option value="football">Football</option>
+                <option value="riding">Riding</option>
+              </select>
+            </label>
+
+            <label>
+              Age:
+              <input type="text" ref={this.ageInput} />
+            </label>
+            <input type="submit" value="Submit" />
+          </form>
+        );
+      }
+    }
+
+    ReactDOM.render(
+        <NameForm />,
+        document.getElementById('root')
+    );
+</script>
+</body>
+</html>
