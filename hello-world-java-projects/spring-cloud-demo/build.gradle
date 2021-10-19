@@ -33,8 +33,6 @@ subprojects {
 	}
 
 	dependencies {
-//		implementation 'org.springframework.boot:spring-boot-starter-web'
-//		compileClasspath 'org.springframework.cloud:spring-cloud-config-server'
 //		compileClasspath 'org.springframework.cloud:spring-cloud-starter-config'
 //		compileClasspath 'org.springframework.cloud:spring-cloud-starter-sleuth'
 		compileOnly 'org.projectlombok:lombok'
