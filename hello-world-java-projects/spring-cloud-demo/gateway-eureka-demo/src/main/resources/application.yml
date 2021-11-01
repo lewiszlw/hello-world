@@ -1,0 +1,33 @@
+server:
+  port: 8002
+spring:
+  application:
+    name: gateway-eureka-demo
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          # 是否与服务注册于发现组件进行结合，通过 serviceId 转发到具体的服务实例。默认为 false，设为 true 便开启通过服务中心的自动根据 serviceId 创建路由的功能
+          enabled: true
+      routes:
+        # 当访问地址 http://localhost:8002/lewiszlw 时会自动转发到地址：https://github.com/lewiszlw
+        - id: github_route
+          uri: https://github.com
+          predicates:
+            - Path=/lewiszlw
+        # 当访问地址 http://localhost:8002/hello 时会自动转发到地址：http://localhost:9002/hello?name=xxx
+        - id: producer_hello_route
+          uri: http://localhost:9002
+          predicates:
+            - Path=/hello
+          filters:
+            - AddRequestParameter=name, xxx
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8000/eureka/
+
+logging:
+  level:
+    org.springframework.cloud.gateway: trace

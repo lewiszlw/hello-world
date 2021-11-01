@@ -1,6 +1,8 @@
 rootProject.name = 'spring-cloud-demo'
 include 'eureka-server-demo'
 include 'producer-service-demo'
+include 'producer-service-demo2'
 include 'consumer-service-demo'
 include 'config-server-demo'
+include 'gateway-eureka-demo'
 
