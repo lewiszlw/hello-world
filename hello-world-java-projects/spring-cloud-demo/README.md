@@ -28,10 +28,13 @@
 本地启动服务后，可访问 http://localhost:8001/consumer-service-demo/prod 来查看配置。
 
 启动 rabbitmq docker 容器
+
 `docker run -d --hostname rabbit-host1 --name rabbitmq -e RABBITMQ_DEFAULT_USER=admin -e RABBITMQ_DEFAULT_PASS=123456 -p 15672:15672 -p 5672:5672 -p 25672:25672 -p 61613:61613 -p 1883:1883 rabbitmq:management`
-，可通过 http://localhost:15672/ 访问 rabbitmq 控制台。
+
+可通过 http://localhost:15672/ 访问 rabbitmq 控制台。
 
 执行`curl -X POST http://localhost:8001/actuator/busrefresh` 来刷新所有客户端配置。
+
 执行`curl -X POST http://localhost:8001/actuator/busrefresh/consumer-service-demo:9001` 来进行局部刷新。
 
 ## producer-service-demo 和 producer-service-demo2
@@ -49,12 +52,17 @@ producer-service-demo 和 producer-service-demo2 模仿同一服务的两个节�
 可以通过 yml 或者 bean 两种方式进行路由配置。
 
 本地启动服务后，
+
 访问 http://localhost:8002/lewiszlw 将转到 https://github.com/lewiszlw
+
 访问 http://localhost:8002/vczh 将转到 https://github.com/vczh
+
 访问 http://localhost:8002/hello 将转到 http://localhost:9002/hello?name=xxx
 
 将 Spring Cloud Gateway 注册到服务中心之后，网关会自动代理所有的在注册中心的服务，访问这些服务的语法为：`http://{gateway ip}:{gateway port}/serviceId/{service url}`
+
 如访问 http://localhost:8002/CONSUMER-SERVICE-DEMO/test-call 会转到 http://localhost:9001/test-call
+
 如访问 http://localhost:8002/PRODUCER-SERVICE-DEMO/test-config 会转到 http://localhost:9000/test-config
 
 多次访问 http://localhost:8002/PRODUCER-SERVICE-DEMO/hello?name=lewis，页面交替返回以下信息
@@ -66,8 +74,13 @@ hello2 lewis
 
 # Reference
 https://github.com/ityouknow/spring-cloud-examples
+
 https://docs.spring.io/spring-cloud-netflix/docs/current/reference/html/
+
 https://docs.spring.io/spring-cloud-openfeign/docs/current/reference/html/
+
 https://docs.spring.io/spring-cloud-config/docs/current/reference/html/
+
 https://docs.spring.io/spring-cloud-bus/docs/current/reference/html/
+
 https://docs.spring.io/spring-cloud-gateway/docs/current/reference/html/

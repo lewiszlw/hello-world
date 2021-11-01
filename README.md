@@ -17,6 +17,8 @@
 - [RocketMQ 示例](https://github.com/lewiszlw/hello-world/tree/master/hello-world-spring/rocketmq-demo)
 - [阿里面试题：租房中介系统](https://github.com/lewiszlw/hello-world/tree/master/hello-world-spring/alibaba-interview-rental-intermediary)
 - [Dagger 示例](https://github.com/lewiszlw/hello-world/tree/master/hello-world-java-projects/dagger-demo)
+- [学习Spring Cloud](https://github.com/lewiszlw/hello-world/tree/master/hello-world-java-projects/spring-cloud-demo)
+- [学习Spring Retry](https://github.com/lewiszlw/hello-world/tree/master/hello-world-java-projects/spring-retry-demo)
 
 ## hello_world_flutter
 - [Whatsapp简单模仿](https://github.com/lewiszlw/hello-world/tree/master/hello_world_flutter/lib/apps/whatsapp)
