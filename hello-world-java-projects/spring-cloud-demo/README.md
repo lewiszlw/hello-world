@@ -59,7 +59,7 @@ producer-service-demo 和 producer-service-demo2 模仿同一服务的两个节�
 
 访问 http://localhost:8002/hello 将转到 http://localhost:9002/hello?name=xxx
 
-将 Spring Cloud Gateway 注册到服务中心之后，网关会自动代理所有的在注册中心的服务，访问这些服务的语法为：`http://{gateway ip}:{gateway port}/serviceId/{service url}`
+将 Spring Cloud Gateway 注册到服务中心之后，网关会自动代理所有的在注册中心的服务，访问这些服务的语法为：`http://{gateway ip}:{gateway port}/{serviceId}/{service path}`
 
 如访问 http://localhost:8002/CONSUMER-SERVICE-DEMO/test-call 会转到 http://localhost:9001/test-call
 
