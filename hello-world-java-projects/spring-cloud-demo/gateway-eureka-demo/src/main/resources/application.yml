@@ -22,6 +22,13 @@ spring:
             - Path=/hello
           filters:
             - AddRequestParameter=name, xxx
+  zipkin:
+    # zipkin server 地址
+    base-url: http://localhost:9411
+  sleuth:
+    sampler:
+      # 采样比例，1.0代表全量收集
+      percentage: 1.0
 
 eureka:
   client:
