@@ -1,8 +1,4 @@
 # jvm性能分析demo
-jvm参数
-```
--XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=128m -Xms1024m -Xmx1024m -Xmn256m -Xss256k -XX:SurvivorRatio=8 -XX:+UseConcMarkSweepGC
-```
 
 ## 添加JVM启动参数
 1.本地IDEA启动
@@ -31,6 +27,10 @@ $ java -jar {xxx} jvm-analysis-demo-1.0.0.jar
 2. 通过JMX的MBean生成当前的堆栈信息（可用于JVM监控）
 3. `jmap -dump:live,format=b,file=heap.hprof {pid}` 或 `jcmd {pid} GC.heap_dump {file-path}` 例如，jcmd 2523 GC.heap_dump ~/Desktop/heap.hprof
 4. `jstack {pid} > {file-path}` 或 `jcmd {pid} Thread.print > {file-path}` 例如，jstack 2523 > ~/Desktop/threaddump.txt
+
+## 分析dump文件
+- 堆dump文件 -> MAT, VisualVM, IDEA Profiler
+- 栈dump文件 -> https://gceasy.io/
 
 ## JVM参数含义
 - -XX:MetaspaceSize=128m （元空间默认大小） 
