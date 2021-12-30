@@ -3,6 +3,8 @@ https://arthas.aliyun.com/
 
 ## 启动和退出arthas
 ```
+curl -O https://arthas.aliyun.com/arthas-boot.jar
+
 # 低版本jdk attach 高版本jdk 会出现 java.io.IOException: Non-numeric value found - int expected
 /Users/lewis/Library/Java/JavaVirtualMachines/openjdk-17/Contents/Home/bin/java -jar arthas-boot.jar 
 ```

@@ -20,6 +20,7 @@
 - [学习Spring Cloud](https://github.com/lewiszlw/hello-world/tree/master/hello-world-java-projects/spring-cloud-demo)
 - [学习Spring Retry](https://github.com/lewiszlw/hello-world/tree/master/hello-world-java-projects/spring-retry-demo)
 - [学习Prometheus](https://github.com/lewiszlw/hello-world/tree/master/hello-world-java-projects/prometheus-demo)
+- [学习Arthas](https://github.com/lewiszlw/hello-world/tree/master/hello-world-java-projects/arthas-demo)
 
 ## hello_world_flutter
 - [Whatsapp简单模仿](https://github.com/lewiszlw/hello-world/tree/master/hello_world_flutter/lib/apps/whatsapp)
