@@ -1,0 +1,120 @@
+version: "3.9"
+services:
+  # Elasticsearch
+  # 需要确保docker被分配了至少4g内存
+  es01:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.16.2
+    container_name: es01
+    restart: always
+    environment:
+      - node.name=es01
+      - cluster.name=es-docker-cluster
+      - discovery.seed_hosts=es02,es03
+      - cluster.initial_master_nodes=es01,es02,es03
+      - bootstrap.memory_lock=true
+      - path.logs=/usr/share/elasticsearch/logs
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m" # 生成环境不建议这样设置
+      - TAKE_FILE_OWNERSHIP=true  # 容器启动报错 Error opening log file ‘logs/gc.log’: Permission denied  https://blog.csdn.net/qq_15256981/article/details/88605824
+    ulimits:  # 生成环境需要配置的系统配置
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - /tmp/elk-demo/elasticsearch/data01:/usr/share/elasticsearch/data
+      - /tmp/elk-demo/elasticsearch/logs01:/usr/share/elasticsearch/logs
+    # es01监听9200端口，其他节点跟es01在同一docker网络下交互
+    ports:
+      - "9200:9200"
+    networks:
+      - elastic
+  es02:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.16.2
+    container_name: es02
+    restart: always
+    environment:
+      - node.name=es02
+      - cluster.name=es-docker-cluster
+      - discovery.seed_hosts=es01,es03
+      - cluster.initial_master_nodes=es01,es02,es03
+      - bootstrap.memory_lock=true
+      - path.logs=/usr/share/elasticsearch/logs
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - TAKE_FILE_OWNERSHIP=true
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - /tmp/elk-demo/elasticsearch/data02:/usr/share/elasticsearch/data
+      - /tmp/elk-demo/elasticsearch/logs02:/usr/share/elasticsearch/logs
+    networks:
+      - elastic
+  es03:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.16.2
+    container_name: es03
+    restart: always
+    environment:
+      - node.name=es03
+      - cluster.name=es-docker-cluster
+      - discovery.seed_hosts=es01,es02
+      - cluster.initial_master_nodes=es01,es02,es03
+      - bootstrap.memory_lock=true
+      - path.logs=/usr/share/elasticsearch/logs
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - TAKE_FILE_OWNERSHIP=true
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - /tmp/elk-demo/elasticsearch/data03:/usr/share/elasticsearch/data
+      - /tmp/elk-demo/elasticsearch/logs03:/usr/share/elasticsearch/logs
+    networks:
+      - elastic
+  # Kibana
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.16.2
+    container_name: kibana
+    restart: always
+    environment:
+      SERVER_NAME: kibana
+      ELASTICSEARCH_HOSTS: '["http://es01:9200","http://es02:9200","http://es03:9200"]'  # 同一网络中可直接指定容器名
+    ports:
+      - "5601:5601"
+    networks:
+      - elastic
+    depends_on:
+      - es01
+      - es02
+      - es03
+  filebeat:
+    image: docker.elastic.co/beats/filebeat:7.16.2
+    container_name: filebeat
+    user: root
+    restart: always
+    environment:
+      - output.elasticsearch.hosts=["10.224.223.85:9200"]
+    command: filebeat -e -strict.perms=false
+    volumes:
+      - ./filebeat.yml:/usr/share/filebeat/filebeat.yml:ro
+      - /var/lib/docker/containers:/var/lib/docker/containers:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./logs:/var/log/elk-demo/
+    depends_on:
+      - es01
+      - es02
+      - es03
+
+# https://stackoverflow.com/questions/42195334/docker-compose-volumes-driver-local-meaning
+#volumes:
+#  data01:
+     # volume存储在本机（volume也可以在其他机器上创建并挂载到本机）
+#    driver: local
+#  data02:
+#    driver: local
+#  data03:
+#    driver: local
+
+networks:
+  elastic:
+    driver: bridge

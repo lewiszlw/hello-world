@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <property name="LOGS" value="./logs" />
+    <property name="SERVICE_NAME" value="elk-demo" />
+
+    <!-- 定义控制台appender 作用：把日志输出到控制台 -->
+    <appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>%black(%d{ISO8601}) %highlight(%-5level) [%blue(%t)] %yellow(%C{1.}): %msg%n%throwable</Pattern>
+        </layout>
+    </appender>
+
+    <!-- 定义滚动记录文件appender 作用：滚动记录文件，先将日志记录到指定文件，当符合某个条件时，将日志记录到其他文件
+            <file>：被写入的文件名，可以是相对目录也可以是绝对目录，如果上级目录不存在会自动创建，没有默认值
+            <rollingPolicy>：当发生滚动时，决定RollingFileAppender的行为，涉及文件移动和重命名
+            <triggeringPolicy>：告知RollingFileAppender何时触发滚动
+    -->
+    <appender name="RollingFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOGS}/${SERVICE_NAME}.log</file>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <!-- %m输出的信息，%p日志级别，%t线程名，%d日期，%c类的全名，%n换行 -->
+            <Pattern>%d %p %C{1.} [%t] %m%n</Pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- rollover daily and when the file reaches 10 MegaBytes -->
+            <fileNamePattern>${LOGS}/archived/${SERVICE_NAME}-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <maxHistory>30</maxHistory>  <!--最长保留30天-->
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>1MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+    </appender>
+
+    <!-- error日志滚动记录 -->
+    <appender name="ErrorRollingFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOGS}/${SERVICE_NAME}.error.log</file>
+        <encoder>
+            <pattern>%date %level [%thread] %class#%method[%file:%line] %msg%n</pattern>
+            <charset>utf-8</charset>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOGS}/archived/${SERVICE_NAME}-%d{yyyy-MM-dd}.%i.error.log</fileNamePattern>
+            <maxHistory>30</maxHistory>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>1MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+        <!--
+             配置日志级别过滤器 作用：根据日志级别进行过滤，如果日志级别等于配置级别过滤器会根据onMath和onMismatch接收或拒绝日志
+                <level>：设置过滤级别
+                <onMatch>：用于配置符合过滤条件的操作
+                <onMismatch>：用于配置不符合过滤条件的操作
+        -->
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>ERROR</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+    </appender>
+
+
+    <!-- 设置 root 的打印级别 -->
+    <root level="info">
+        <appender-ref ref="Console" />
+        <appender-ref ref="RollingFile" />
+        <appender-ref ref="ErrorRollingFile" />
+    </root>
+
+    <!-- logger用来设置某一个包的日志打印级别
+            name:用来指定受此loger约束的某一个包或者具体的某一个类
+            level:用来设置打印级别,大小写无关:TRACE, DEBUG, INFO, WARN, ERROR, ALL 和 OFF
+            addtivity:是否向上级loger传递打印信息。默认是true,会将信息输入到root配置指定的地方,可以包含多个appender-ref，标识这个appender会添加到这个logger
+    -->
+    <logger name="com.github.lewiszlw.elkdemo" level="debug" additivity="false">
+        <appender-ref ref="Console" />
+        <appender-ref ref="RollingFile" />
+        <appender-ref ref="ErrorRollingFile" />
+    </logger>
+
+</configuration>
