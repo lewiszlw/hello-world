@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hello-world-csharp", "hello-world-csharp\hello-world-csharp.csproj", "{AD98E476-A20E-48EE-B430-9B69E35CB4E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hello-world-csharp-tests", "hello-world-csharp-tests\hello-world-csharp-tests.csproj", "{42B392E8-F35A-41F4-9DCA-B3FA1892EF9E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AD98E476-A20E-48EE-B430-9B69E35CB4E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD98E476-A20E-48EE-B430-9B69E35CB4E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD98E476-A20E-48EE-B430-9B69E35CB4E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD98E476-A20E-48EE-B430-9B69E35CB4E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42B392E8-F35A-41F4-9DCA-B3FA1892EF9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42B392E8-F35A-41F4-9DCA-B3FA1892EF9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42B392E8-F35A-41F4-9DCA-B3FA1892EF9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42B392E8-F35A-41F4-9DCA-B3FA1892EF9E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

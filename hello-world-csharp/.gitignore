@@ -1,0 +1,32 @@
+.vs/
+_UpgradeReport_Files/
+[Pp]ackages/
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Mac desktop service store files
+.DS_Store
+
+# Folder config file
+Desktop.ini
+
+# User-specific files
+*.suo
+*.user
+*.sln.docstates
+.vs
+.vscode
+
+# Build results
+
+[Dd]ebug/
+[Rr]elease/
+x64/
+build/
+[Bb]in/
+[Oo]bj/
+
+# Rider is a Visual Studio alternative
+.idea/*
