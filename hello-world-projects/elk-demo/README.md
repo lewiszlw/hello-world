@@ -12,6 +12,8 @@ ELK Stack/ Elastic Stack 介绍：
    - logback.groovy
 
 ## 搭建ELK环境
+执行`docker compose up -d`命令启动es、kibana和filebeat容器。
+
 https://www.elastic.co/guide/en/elastic-stack/current/installing-elastic-stack.html
 
 1.Elasticsearch
