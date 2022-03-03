@@ -12,18 +12,18 @@ ELK Stack/ Elastic Stack 介绍：
    - logback.groovy
 
 ## 搭建ELK环境
-执行`docker compose up -d`命令启动es、kibana和filebeat容器。
+执行`docker compose up -d`命令启动es、kibana和logstash容器。
 
 https://www.elastic.co/guide/en/elastic-stack/current/installing-elastic-stack.html
 
 1.Elasticsearch
 - https://www.elastic.co/guide/en/elasticsearch/reference/7.16/docker.html
 - 执行 `curl -X GET "localhost:9200/_cat/nodes?v=true&pretty"` 可查看 es nodes 是否正常运行中。
+- http://localhost:9200/_cat/indices?v 可查看索引列表
 
 2.Kibana
 - https://www.elastic.co/guide/en/kibana/7.16/docker.html
 - 访问 http://localhost:5601/ 可查看 kibana 页面。
 
-3.Filebeat
-- https://www.elastic.co/guide/en/beats/filebeat/7.16/filebeat-installation-configuration.html
-- https://www.elastic.co/guide/en/beats/filebeat/7.16/filebeat-input-filestream.html
+3.Logstash
+
