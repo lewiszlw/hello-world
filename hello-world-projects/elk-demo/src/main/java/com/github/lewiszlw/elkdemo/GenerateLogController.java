@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 
 @RestController
 @Slf4j
-public class ApiController {
+public class GenerateLogController {
     private static ScheduledExecutorService executorService = Executors.newScheduledThreadPool(1);
 
     @PostConstruct
