@@ -1,4 +1,8 @@
 # grpc-demo
+- 服务间调用
+- 异常处理
+- 注册发现
+- 限流
 
 ## 接口定义 grpc-interface
 1. 创建 .proto 服务定义文件在 /src/main/proto 目录下
