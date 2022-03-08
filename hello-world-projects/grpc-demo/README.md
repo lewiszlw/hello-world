@@ -1,8 +1,11 @@
 # grpc-demo
 - 服务间调用
 - 异常处理
-- 注册发现
-- 限流
+
+注册发现：
+
+可以通过 net.devh:grpc-spring-boot-starter 自带的支持如 eureka （可参考 spring-cloud-demo 中 eureka-server-demo 模块实现）
+来实现服务注册发现；也可以通过 agent 方式（需自行开发），每个 client 或 server 上附带一个 agent 来管理服务注册和发现。
 
 ## 接口定义 grpc-interface
 1. 创建 .proto 服务定义文件在 /src/main/proto 目录下
