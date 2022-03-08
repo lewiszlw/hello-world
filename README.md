@@ -27,6 +27,7 @@
 - [学习 TarsosDSP 分析音频](https://github.com/lewiszlw/hello-world/tree/master/hello-world-projects/tarsosdsp-demo)
 - [学习 ELK](https://github.com/lewiszlw/hello-world/tree/master/hello-world-projects/elk-demo)
 - [JVM 性能分析](https://github.com/lewiszlw/hello-world/tree/master/hello-world-projects/jvm-analysis-demo)
+- [学习 gRPC](https://github.com/lewiszlw/hello-world/tree/master/hello-world-projects/grpc-demo)
 
 
 ## hello_world_flutter - Flutter 框架学习
