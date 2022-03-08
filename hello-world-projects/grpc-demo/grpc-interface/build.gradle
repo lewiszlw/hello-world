@@ -1,0 +1,26 @@
+apply plugin: 'org.springframework.boot'
+apply plugin: 'com.google.protobuf'
+
+dependencies {
+    // grpc 依赖
+    runtimeOnly 'io.grpc:grpc-netty-shaded:1.44.1'
+    implementation 'io.grpc:grpc-protobuf:1.44.1'
+    implementation 'io.grpc:grpc-stub:1.44.1'
+    compileOnly 'org.apache.tomcat:annotations-api:6.0.53' // necessary for Java 9+
+}
+
+protobuf {
+    protoc {
+        artifact = "com.google.protobuf:protoc:3.19.2"
+    }
+    plugins {
+        grpc {
+            artifact = 'io.grpc:protoc-gen-grpc-java:1.44.1'
+        }
+    }
+    generateProtoTasks {
+        all()*.plugins {
+            grpc {}
+        }
+    }
+}

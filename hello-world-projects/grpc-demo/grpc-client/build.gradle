@@ -1,0 +1,9 @@
+apply plugin: 'org.springframework.boot'
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    // https://mvnrepository.com/artifact/net.devh/grpc-client-spring-boot-starter
+    implementation 'net.devh:grpc-client-spring-boot-starter:2.13.1.RELEASE'
+    implementation project(':grpc-interface')
+}
