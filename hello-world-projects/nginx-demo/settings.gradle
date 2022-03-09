@@ -1,0 +1,4 @@
+rootProject.name = 'nginx-demo'
+include 'app-instance1'
+include 'app-instance2'
+
