@@ -2,8 +2,8 @@
 // Created by Linwei Zhang on 2022/3/25.
 //
 
-#include "stdio.h"
-#include "stdlib.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 int max(int, int);
 int next_value(void);

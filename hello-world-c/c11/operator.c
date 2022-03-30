@@ -2,7 +2,7 @@
 // Created by Linwei Zhang on 2022/3/24.
 //
 
-#include "stdio.h"
+#include <stdio.h>
 
 int main() {
     // 按位与

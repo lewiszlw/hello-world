@@ -2,9 +2,9 @@
 // Created by Linwei Zhang on 2022/3/15.
 //
 
-#include "stdio.h"
-#include "string.h"
-#include "stdlib.h"
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 
 // 方法1：使用strcpy和strcat拼接
 void concat1();

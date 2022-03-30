@@ -2,15 +2,14 @@
 // Created by Linwei Zhang on 2022/3/24.
 //
 
-#include "stdio.h"
+#include <stdio.h>
 
-typedef enum Day {
+enum Day {
     // 0   1   3      4    5    6    7
     MON, TUE, WED=3, THU, FRI, SAT, SUN
-} Day;
+};
 
-// 需要通过 typedef 才能这样传递枚举类型参数
-void weather(Day);
+void weather(enum Day);
 
 int main() {
     printf("MON is %d\n", MON);
@@ -26,7 +25,7 @@ int main() {
     weather(TUE);
 }
 
-void weather(Day day) {
+void weather(enum Day day) {
     if (day == MON) {
         printf("The weather of this day is not good\n");
     } else {

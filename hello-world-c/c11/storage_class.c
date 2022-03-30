@@ -2,7 +2,7 @@
 // Created by Linwei Zhang on 2022/3/23.
 //
 
-#include "stdio.h"
+#include <stdio.h>
 
 int get_static_variable();
 extern int extern_add(int, int);
