@@ -61,3 +61,70 @@ mkdir build && cd build
 cmake ..
 make test # 或者 ctest 执行单元测试
 ```
+
+## template-project
+CMake 模板项目。
+- https://github.com/Modern-CMake-CN/Modern-CMake-zh_CN/blob/master/chapters/basics/structure.md
+- https://zhuanlan.zhihu.com/p/493250684
+
+项目结构
+```
+.
+├── CMakeLists.txt
+├── cmake
+│   └── FindSomeLib.cmake
+├── conf
+│   └── config.json
+├── ext
+│   └── lib1
+│       ├── CMakeLists.txt
+│       ├── include
+│       │   └── lib1.h
+│       ├── lib
+│       │   └── liblib1.a
+│       └── src
+│           └── lib1.c
+├── include
+│   └── template-project
+│       ├── common
+│       │   └── common.h
+│       ├── module1
+│       │   └── module1.h
+│       └── module2
+│           └── module2.h
+├── src
+│   ├── CMakeLists.txt
+│   ├── common
+│   │   ├── CMakeLists.txt
+│   │   └── common.c
+│   ├── main.c
+│   ├── module1
+│   │   ├── CMakeLists.txt
+│   │   └── module1.c
+│   └── module2
+│       ├── CMakeLists.txt
+│       └── module2.c
+└── test
+    ├── CMakeLists.txt
+    ├── common
+    │   └── common_test.cc
+    ├── module1
+    │   └── module1_test.cc
+    └── module2
+        └── module2_test.cc
+```
+- include 项目头文件
+- src 项目源文件
+- test 项目测试文件
+- ext 外部依赖库
+- conf 项目配置文件
+- cmake cmake相关的文件（如Findxxx.cmake）
+
+编译测试
+```shell
+mkdir build && cd build
+cmake -DTEST=ON ..
+make
+make test
+./bin/main
+```
