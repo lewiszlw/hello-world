@@ -40,3 +40,24 @@ sudo make install
 ```
 target_link_libraries(hello_library PRIVATE ${CJSON_LIBRARIES})
 ```
+
+通过 install 安装到本地
+```
+install(TARGETS hello_library DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
+```
+编译后执行 `sudo make install` 来执行安装。
+
+## hello-unit-testing
+学习如何使用 CMake 来编译和测试 C/C++ 单元测试。
+
+采用 googletest 来编写单测
+1. 创建 .cc 单测文件
+2. 编写 CMakeLists.txt 生成可执行文件并链接gtest和待测试库，配置单元测试
+3. 引入 gtest 头文件，以及通过 extern "C" 引入C语言头文件，然后编写单测
+
+执行单元测试
+```shell
+mkdir build && cd build
+cmake ..
+make test # 或者 ctest 执行单元测试
+```

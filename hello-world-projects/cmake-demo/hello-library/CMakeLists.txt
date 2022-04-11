@@ -28,3 +28,11 @@ target_link_libraries(hello_library PRIVATE static_library_hello)
 target_link_libraries(hello_library PRIVATE shared_library_hi)
 # 链接第三方库到 hello_library target 上
 target_link_libraries(hello_library PRIVATE ${CJSON_LIBRARIES})
+
+# 安装
+message("CMAKE_INSTALL_PREFIX: ${CMAKE_INSTALL_PREFIX}")
+install(TARGETS hello_library DESTINATION ${CMAKE_INSTALL_PREFIX}/bin) # 可执行文件
+install(TARGETS static_library_hello DESTINATION lib) # 静态库
+install(TARGETS shared_library_hi DESTINATION lib) # 动态库
+install(DIRECTORY ${PROJECT_SOURCE_DIR}/include/ DESTINATION include) # 头文件
+install(FILES cmake-demo.conf DESTINATION etc)  # 配置文件
