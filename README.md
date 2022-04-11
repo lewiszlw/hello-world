@@ -32,6 +32,7 @@
 - [JVM 性能分析](https://github.com/lewiszlw/hello-world/tree/master/hello-world-projects/jvm-analysis-demo)
 - [学习 gRPC](https://github.com/lewiszlw/hello-world/tree/master/hello-world-projects/grpc-demo)
 - [学习 Nginx](https://github.com/lewiszlw/hello-world/tree/master/hello-world-projects/nginx-demo)
+- [学习 CMake](https://github.com/lewiszlw/hello-world/tree/master/hello-world-projects/cmake-demo)
 
 
 ## hello_world_flutter - Flutter 框架学习
