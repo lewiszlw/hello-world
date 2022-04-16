@@ -1,0 +1,1 @@
+add_executable(pthread pthread.c)

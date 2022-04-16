@@ -1,0 +1,1 @@
+add_executable(read_file_as_str read_file_as_str.c)
