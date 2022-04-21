@@ -67,6 +67,7 @@ int main() {
                 puts("dup2 error to stdout...\n");
             close(child_parent_pipe[1]);
         }
+        // 需要赋予可执行权限 chmod +x NullFilter.py
         if (execl("./NullFilter.py", "./NullFilter.py", (char *) 0) < 0)
             puts("execl error...\n");
     }
