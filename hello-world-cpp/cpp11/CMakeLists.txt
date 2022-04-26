@@ -1,0 +1,10 @@
+set(CMAKE_CXX_STANDARD 11)
+
+add_executable(string string.cpp)
+add_executable(function function.cpp)
+add_executable(pointer pointer.cpp)
+add_executable(reference reference.cpp)
+add_executable(class class.cpp)
+add_executable(exception_handling exception_handling.cpp)
+add_executable(namespace namespace.cpp)
+add_executable(template template.cpp)
