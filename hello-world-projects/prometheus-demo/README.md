@@ -2,30 +2,18 @@
 学习搭建 Prometheus 环境、代码埋点上报。
 
 ## 搭建环境
-1.启动 Prometheus
-
-基于 prometheus.yaml 启动，文件内容见本项目下的 prometheus.yaml。
-
-`docker run --name prometheus -d -p 127.0.0.1:9090:9090 -v {path-to-prometheus.yml}:/etc/prometheus/prometheus.yml prom/prometheus`
-
-访问 http://localhost:9090 查看官方 UI。
-
-2.启动 Grafana（更好的UI展示）
-
-`docker run --name grafana -d -p 3000:3000 grafana/grafana`
-
-访问 http://localhost:3000 ，初始账号密码为 admin/admin。
-
-配置 Prometheus 数据源，注意 Access 为 Browser。
-
-引入 [JVM 模板](https://grafana.com/grafana/dashboards/4701) 。
+1. `docker compose up -d`启动prometheus和grafana容器
+2. 访问 http://localhost:9090 查看prometheus官方UI
+3. 访问Grafana http://localhost:3000 ，初始账号密码为 admin/admin
+4. 配置 Prometheus 数据源，注意 Access 为 Browser
+5. 引入 [JVM 模板](https://grafana.com/grafana/dashboards/4701)
 
 ## 启动本项目
 
 `curl -v http://localhost:8088/actuator/prometheus` 可看到 metrics。
 
-1. 访问 http://localhost:8088/hello 即可计数一次。 在 Prometheus 官方 UI 中，搜索 app_requests_method_count_total 即可看到指标的曲线图。
-2. 访问 http://localhost:8088/online?gauge=100 上报当前指标值。在 Prometheus 官方 UI 中，搜索 app_online_gauge 即可看到指标的曲线图。
+1. 访问 http://localhost:8088/hello 即可计数一次。 在 Prometheus 官方 UI 中，搜索 prometheus_demo_requests_method_count_xxx 即可看到指标的曲线图。
+2. 访问 http://localhost:8088/online?gauge=100 上报当前指标值。在 Prometheus 官方 UI 中，搜索 prometheus_demo_online_gauge 即可看到指标的曲线图。
 
 ## 将指标添加到 grafana
 创建 dashboard，并添加 panel，输入 PromQL query，如
