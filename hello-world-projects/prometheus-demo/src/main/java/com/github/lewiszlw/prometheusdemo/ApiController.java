@@ -37,7 +37,7 @@ public class ApiController {
             List<Tag> tags = new ArrayList<>();
             tags.add(Tag.of("session_id", UUID.randomUUID().toString()));
             tags.add(Tag.of("hangup-cause", random("normal-clearing", "no-answer", "busy")));
-            tags.add(Tag.of("hangup-by", random("robot", "", "busy")));
+            tags.add(Tag.of("hangup-by", random("robot", "none", "user")));
             tags.add(Tag.of("ringing", random("true", "false")));
             tags.add(Tag.of("answer", random("true", "false")));
             tags.add(Tag.of("duration", String.valueOf(new Random().nextInt(100))));
