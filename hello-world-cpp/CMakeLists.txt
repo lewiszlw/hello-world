@@ -3,5 +3,6 @@ project(hello_world_cpp)
 
 add_subdirectory(cpp11)
 add_subdirectory(cpp20)
+add_subdirectory(timer)
 
 add_executable(test test.cpp)
