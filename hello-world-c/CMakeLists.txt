@@ -9,6 +9,7 @@ add_subdirectory(socket)
 add_subdirectory(pthread)
 add_subdirectory(process)
 add_subdirectory(io)
+add_subdirectory(encoding)
 
 find_package(cJSON REQUIRED)
 if (cJSON_FOUND)
