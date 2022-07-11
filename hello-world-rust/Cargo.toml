@@ -1,0 +1,47 @@
+[package]
+name = "hello-world-rust"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[[bin]]
+name = "hello_rustaceans"
+path = "src/hello_rustaceans.rs"
+[[bin]]
+name = "test"
+path = "src/test.rs"
+
+
+[[bin]]
+name = "guess_number"
+path = "src/lang/guess_number.rs"
+[[bin]]
+name = "variables_and_mutability"
+path = "src/lang/variables_and_mutability.rs"
+[[bin]]
+name = "data_types"
+path = "src/lang/data_types.rs"
+[[bin]]
+name = "functions"
+path = "src/lang/functions.rs"
+[[bin]]
+name = "control_flow"
+path = "src/lang/control_flow.rs"
+[[bin]]
+name = "ownership"
+path = "src/lang/ownership.rs"
+[[bin]]
+name = "references"
+path = "src/lang/references.rs"
+[[bin]]
+name = "slices"
+path = "src/lang/slices.rs"
+[[bin]]
+name = "struct"
+path = "src/lang/struct.rs"
+
+[dependencies]
+ferris-says = "0.2"
+rand = "0.8.3"
+libc = "0.2.0"
