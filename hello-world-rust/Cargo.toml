@@ -38,8 +38,11 @@ path = "src/lang/references.rs"
 name = "slices"
 path = "src/lang/slices.rs"
 [[bin]]
-name = "struct"
-path = "src/lang/struct.rs"
+name = "structs"
+path = "src/lang/structs.rs"
+[[bin]]
+name = "enums"
+path = "src/lang/enums.rs"
 
 [dependencies]
 ferris-says = "0.2"

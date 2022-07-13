@@ -1,5 +1,6 @@
 use std::net::TcpListener;
 fn main() {
-    TcpListener::bind("localhost:8080").unwrap();
     println!("Hello, world!");
+    let s = "hello";
+    let s2 = s.to_string();
 }
