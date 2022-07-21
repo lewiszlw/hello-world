@@ -1,6 +1,7 @@
 use futures_util::{SinkExt, StreamExt};
 use log::*;
 use tokio_tungstenite::{connect_async, tungstenite::{Message, Error as WsError}};
+use tokio_tungstenite::tungstenite::handshake::client::Request;
 
 // 请求tts服务器合成语音
 #[tokio::main]
@@ -12,8 +13,19 @@ async fn main() {
     env_logger::init();
 
     // 建立websocket连接
-    let url = url::Url::parse("ws://localhost:9003").unwrap();
-    let (mut ws_stream, _) = connect_async(url).await.expect("failed to connect");
+    let req = Request::builder()
+        .uri("ws://localhost:9003")
+        .header("host", "localhost")
+        .header("upgrade", "websocket")
+        .header("connection", "Upgrade")
+        .header("sec-websocket-key", "x3JJHMbDL1EzLkh9GBhXDw==")
+        .header("sec-websocket-version", "13")
+        .header("X-NLS-Token", "default")
+        .header("X-NLS-Levels", "[xiaoai_amy]")
+        .header("X-NLS-SessionId", "lwztestsessionid")
+        .body(())
+        .unwrap();
+    let (mut ws_stream, _) = connect_async(req).await.expect("failed to connect");
     info!("Websocket connected");
 
     // 模拟发送tts文字
