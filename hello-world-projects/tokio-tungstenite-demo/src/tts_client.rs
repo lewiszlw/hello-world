@@ -12,11 +12,12 @@ async fn main() {
     env_logger::init();
 
     // 建立websocket连接
-    let url = url::Url::parse("ws://localhost:9002").unwrap();
+    let url = url::Url::parse("ws://localhost:9003").unwrap();
     let (mut ws_stream, _) = connect_async(url).await.expect("failed to connect");
     info!("Websocket connected");
 
-    let text = "您好，我是小米智能客服，了解到您近期使用过空调产品的维修服务，和您做个服务回访，如果让您用“满意、一般、不满意”来评价本次服务，您会选择哪一项呢？";
+    // 模拟发送tts文字
+    let text = "您好，我是智能客服，了解到您近期使用过空调产品的维修服务，和您做个服务回访，如果让您用“满意、一般、不满意”来评价本次服务，您会选择哪一项呢？";
     let msg = Message::Text(text.to_string());
     ws_stream.send(msg).await.unwrap();
 
@@ -25,7 +26,12 @@ async fn main() {
             Ok(msg) => {
                 match msg {
                     Message::Text(text) => {
-                        println!("Received text message: {}", text);
+                        info!("Received text message: {}", text);
+                    },
+                    Message::Binary(data) => {
+                        // 接收tts合成音频流并写入文件
+                        info!("Received binary message");
+                        std::fs::write("tts_client.pcm", &data).unwrap();
                     },
                     Message::Close(frame) => {
                         info!("Received close message: {:?}", frame);
@@ -33,7 +39,7 @@ async fn main() {
                             match e {
                                 WsError::ConnectionClosed => (),
                                 _ => {
-                                    error!("Error while closing: {}", e);
+                                    error!("Error while closing: {:?}", e);
                                 },
                             }
                         }
@@ -43,7 +49,7 @@ async fn main() {
                 }
             },
             Err(e) => {
-                error!("Error receiving message: \n{0:?}\n{0}", e);
+                error!("Error receiving message: {:?}", e);
             }
         }
     } else {
@@ -64,7 +70,7 @@ async fn main() {
                 }
             },
             Err(e) => {
-                error!("Error receiving message: \n{0:?}\n{0}", e);
+                error!("Error receiving message: {:?}", e);
             }
         }
     }

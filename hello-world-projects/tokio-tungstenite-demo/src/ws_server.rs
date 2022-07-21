@@ -63,7 +63,7 @@ async fn handle_connection(peer: SocketAddr, stream: TcpStream) -> Result<()> {
                                     match e {
                                         Error::ConnectionClosed => (),
                                         _ => {
-                                            info!("Error while closing: {}", e);
+                                            error!("Error while closing: {}", e);
                                             break;
                                         },
                                     }
