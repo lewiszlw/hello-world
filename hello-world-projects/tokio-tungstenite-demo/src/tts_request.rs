@@ -2,37 +2,37 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Deserialize, Serialize)]
 pub struct NlsSpeechRequest {
-    header: NlsSpeechReqHeader,
-    payload: NlsSpeechReqPayload,
-    context: NlsSpeechReqContext,
+    pub header: NlsSpeechReqHeader,
+    pub payload: NlsSpeechReqPayload,
+    pub context: NlsSpeechReqContext,
 }
 #[derive(Debug, Deserialize, Serialize)]
-struct NlsSpeechReqHeader {
-    appkey: String,
-    message_id: String,
-    name: String,
-    namespace: String,
-    task_id: String,
+pub struct NlsSpeechReqHeader {
+    pub appkey: String,
+    pub message_id: String,
+    pub name: String,
+    pub namespace: String,
+    pub task_id: String,
 }
 #[derive(Debug, Deserialize, Serialize)]
-struct NlsSpeechReqPayload {
-    format: String,
-    pitch_rate: i32,
-    sample_rate: i32,
-    speech_rate: i32,
-    text: String,
-    voice: String,
-    volume: i32,
+pub struct NlsSpeechReqPayload {
+    pub format: String,
+    pub pitch_rate: i32,
+    pub sample_rate: i32,
+    pub speech_rate: i32,
+    pub text: String,
+    pub voice: String,
+    pub volume: i32,
 }
 #[derive(Debug, Deserialize, Serialize)]
-struct NlsSpeechReqContext {
-    sdk: SpeechReqSdk,
+pub struct NlsSpeechReqContext {
+    pub sdk: SpeechReqSdk,
 }
 #[derive(Debug, Deserialize, Serialize)]
-struct SpeechReqSdk {
-    language: String,
-    name: String,
-    version: String,
+pub struct SpeechReqSdk {
+    pub language: String,
+    pub name: String,
+    pub version: String,
 }
 
 impl NlsSpeechRequest {
@@ -71,6 +71,41 @@ impl NlsSpeechRequest {
 
     pub fn to_json(&self) -> String {
         serde_json::to_string(&self).unwrap()
+    }
+}
+
+#[derive(Debug, Deserialize, Serialize)]
+pub struct NlsSpeechResponse {
+    pub header: NlsSpeechResponseHeader,
+}
+#[derive(Debug, Deserialize, Serialize)]
+pub struct NlsSpeechResponseHeader {
+    pub message_id: String,
+    pub name: String,
+    pub namespace: String,
+    pub task_id: String,
+    pub status_text: String,
+    pub status: i32,
+}
+
+impl NlsSpeechResponse {
+    pub fn complete_success(message_id: String, task_id: String) -> Self {
+        let speech_resp = NlsSpeechResponse {
+            header: NlsSpeechResponseHeader {
+                message_id,
+                name: "SynthesisCompleted".to_string(),
+                namespace: "SpeechSynthesizer".to_string(),
+                task_id,
+                status_text: "Gateway:SUCCESS:Success.".to_string(),
+                status: 20000000,
+            }
+        };
+
+        speech_resp
+    }
+
+    pub fn from_json(json: &str) -> Self {
+        serde_json::from_str(json).unwrap()
     }
 }
 

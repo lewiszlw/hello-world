@@ -4,6 +4,9 @@ use std::net::SocketAddr;
 use tokio::net::{TcpListener, TcpStream};
 use tokio_tungstenite::{accept_async, tungstenite::Error};
 use tokio_tungstenite::tungstenite::Message;
+use crate::tts_request::{NlsSpeechRequest, NlsSpeechResponse};
+
+mod tts_request;
 
 /// 从本地pcm文件读取返回音频流
 
@@ -33,15 +36,23 @@ async fn accept_connection(peer: SocketAddr, stream: TcpStream) {
     let mut ws_stream = accept_async(stream).await.expect("Failed to accept ws");
     info!("New WebSocket connection: {}", peer);
 
-    // let (mut ws_sender, mut ws_receiver) = ws_stream.split();
     while let Some(item) = ws_stream.next().await {
         match item {
             Ok(msg) => {
                 match msg {
                     Message::Text(text) => {
                         info!("Received message: {}", text);
-                        ws_stream.send(Message::Binary(std::fs::read("/Users/lewis/Github/hello-world/hello-world-projects/tokio-tungstenite-demo/assets/demo-8kHz.pcm").unwrap())).await.unwrap();
-                        info!("Sent pcm data")
+                        let speech_req: NlsSpeechRequest = serde_json::from_str(&text).unwrap();
+                        if speech_req.header.name == "StartSynthesis" {
+                            // 发送tts语音流
+                            ws_stream.send(Message::Binary(std::fs::read("/Users/lewis/Github/hello-world/hello-world-projects/tokio-tungstenite-demo/assets/demo-8kHz.pcm").unwrap())).await.unwrap();
+                            info!("Sent pcm data");
+
+                            // 发送tts完成响应
+                            let speech_resp = NlsSpeechResponse::complete_success(speech_req.header.message_id.clone(), speech_req.header.task_id.clone());
+                            ws_stream.send(Message::Text(serde_json::to_string(&speech_resp).unwrap())).await.unwrap();
+                            info!("Sent speech complete message");
+                        }
                     }
                     Message::Close(_) => {
                         info!("Received close message.");
@@ -59,7 +70,7 @@ async fn accept_connection(peer: SocketAddr, stream: TcpStream) {
                 }
             }
             Err(e) => {
-                error!("Error receiving message: {}", e);
+                error!("Error receiving message: {:?}", e);
             }
         }
     }

@@ -1,12 +1,16 @@
+use std::fs::File;
+use std::io::Write;
 use futures_util::{SinkExt, StreamExt};
 use log::*;
-use tokio_tungstenite::{connect_async, tungstenite::{Message, Error as WsError}};
+use tokio::net::TcpStream;
+use tokio_tungstenite::{connect_async, MaybeTlsStream, tungstenite::{Message, Error as WsError}, WebSocketStream};
 use tokio_tungstenite::tungstenite::handshake::client::Request;
 use crate::tts_request::*;
 
 mod tts_request;
 
-// 请求tts服务器合成语音
+/// 请求tts服务器合成语音
+
 #[tokio::main]
 async fn main() {
     // 配置日志实现
@@ -36,49 +40,25 @@ async fn main() {
     let msg = Message::Text(NlsSpeechRequest::new(text.to_string()).to_json());
     ws_stream.send(msg).await.unwrap();
 
-    if let Some(item) = ws_stream.next().await {
+    while let Some(item) = ws_stream.next().await {
         match item {
             Ok(msg) => {
                 match msg {
                     Message::Text(text) => {
                         info!("Received text message: {}", text);
+                        let nls_speech_response: NlsSpeechResponse = NlsSpeechResponse::from_json(&text);
+                        if nls_speech_response.header.status == 20000000 && nls_speech_response.header.name == "SynthesisCompleted" {
+                            ws_close(&mut ws_stream).await;
+                        }
                     },
                     Message::Binary(data) => {
                         // 接收tts合成音频流并写入文件
                         info!("Received binary message");
-                        std::fs::write("tts_client.pcm", &data).unwrap();
+                        std::fs::File::options().append(true).open("tts_client.pcm").unwrap().write(&data).unwrap();
                     },
                     Message::Close(frame) => {
                         info!("Received close message: {:?}", frame);
-                        if let Err(e) = ws_stream.close(None).await {
-                            match e {
-                                WsError::ConnectionClosed => (),
-                                _ => {
-                                    error!("Error while closing: {:?}", e);
-                                },
-                            }
-                        }
-                        info!("Sent close message.");
-                    },
-                    _ => (),
-                }
-            },
-            Err(e) => {
-                error!("Error receiving message: {:?}", e);
-            }
-        }
-    } else {
-        info!("ws_stream next is none")
-    }
-
-    ws_stream.close(None).await.unwrap();
-    info!("Sent close message.");
-    while let Some(item) = ws_stream.next().await {
-        match item {
-            Ok(msg) => {
-                match msg {
-                    Message::Close(frame) => {
-                        info!("Received close message: {:?}", frame);
+                        ws_close(&mut ws_stream);
                         break;
                     },
                     _ => (),
@@ -86,8 +66,21 @@ async fn main() {
             },
             Err(e) => {
                 error!("Error receiving message: {:?}", e);
+                break;
             }
         }
     }
-    info!("Closing...");
+
+}
+
+async fn ws_close(ws_stream: &mut WebSocketStream<MaybeTlsStream<TcpStream>>) {
+    if let Err(e) = ws_stream.close(None).await {
+        match e {
+            WsError::ConnectionClosed => (),
+            _ => {
+                error!("Error while closing: {:?}", e);
+            },
+        }
+    }
+    info!("Sent close message.");
 }
