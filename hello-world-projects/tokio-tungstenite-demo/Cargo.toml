@@ -1,0 +1,27 @@
+[package]
+name = "tokio-tungstenite-demo"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[[bin]]
+name = "ws_server"
+path = "src/ws_server.rs"
+
+[[bin]]
+name = "ws_client"
+path = "src/ws_client.rs"
+
+[[bin]]
+name = "tts_client"
+path = "src/tts_client.rs"
+
+[dependencies]
+tokio = { version = "1.0", features = ["full"] }
+tokio-tungstenite = "0.17.2"
+futures-util = { version = "0.3", default-features = false, features = ["sink", "std"] }
+url = "2.0.0"
+futures-channel = "0.3"
+log = "0.4"  # 日志框架
+env_logger = "0.9"  # 日志实现
