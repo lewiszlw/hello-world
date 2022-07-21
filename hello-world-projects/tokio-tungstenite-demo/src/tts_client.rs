@@ -2,6 +2,9 @@ use futures_util::{SinkExt, StreamExt};
 use log::*;
 use tokio_tungstenite::{connect_async, tungstenite::{Message, Error as WsError}};
 use tokio_tungstenite::tungstenite::handshake::client::Request;
+use crate::tts_request::*;
+
+mod tts_request;
 
 // 请求tts服务器合成语音
 #[tokio::main]
@@ -30,7 +33,7 @@ async fn main() {
 
     // 模拟发送tts文字
     let text = "您好，我是智能客服，了解到您近期使用过空调产品的维修服务，和您做个服务回访，如果让您用“满意、一般、不满意”来评价本次服务，您会选择哪一项呢？";
-    let msg = Message::Text(text.to_string());
+    let msg = Message::Text(NlsSpeechRequest::new(text.to_string()).to_json());
     ws_stream.send(msg).await.unwrap();
 
     if let Some(item) = ws_stream.next().await {
