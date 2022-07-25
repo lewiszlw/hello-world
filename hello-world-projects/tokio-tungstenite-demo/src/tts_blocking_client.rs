@@ -55,7 +55,7 @@ fn main() {
                     Message::Binary(data) => {
                         // 接收tts合成音频流并写入文件
                         info!("Received binary message");
-                        if std::path::Path::new(PCM_PATH).exists() {
+                        if !std::path::Path::new(PCM_PATH).exists() {
                             File::create(PCM_PATH);
                         }
                         std::fs::File::options().append(true).open(PCM_PATH).unwrap().write(&data).unwrap();
