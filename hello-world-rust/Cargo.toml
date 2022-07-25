@@ -44,10 +44,17 @@ path = "src/lang/structs.rs"
 name = "enums"
 path = "src/lang/enums.rs"
 
+[[bin]]
+name = "serde_json_demo"
+path = "src/json/serde_json_demo.rs"
+
 [dependencies]
 ferris-says = "0.2"
 rand = "0.8.3"
 libc = "0.2.0"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+uuid = { version = "1.1.2", features = ["v4", "fast-rng", "macro-diagnostics"] }
 
 [build-dependencies]
 cc = "1.0"
