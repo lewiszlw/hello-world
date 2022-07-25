@@ -12,6 +12,8 @@ mod tts_request;
 
 /// 请求tts服务器合成语音
 
+const PCM_PATH: &str = "tts_client.pcm";
+
 fn main() {
     // 配置日志实现
     if std::env::var_os("RUST_LOG").is_none() {
@@ -53,8 +55,10 @@ fn main() {
                     Message::Binary(data) => {
                         // 接收tts合成音频流并写入文件
                         info!("Received binary message");
-                        let mut file = File::create("tts_client.pcm").unwrap();
-                        std::fs::File::options().append(true).open("tts_client.pcm").unwrap().write(&data).unwrap();
+                        if std::path::Path::new(PCM_PATH).exists() {
+                            File::create(PCM_PATH);
+                        }
+                        std::fs::File::options().append(true).open(PCM_PATH).unwrap().write(&data).unwrap();
                     },
                     Message::Close(frame) => {
                         info!("Received close message: {:?}", frame);
