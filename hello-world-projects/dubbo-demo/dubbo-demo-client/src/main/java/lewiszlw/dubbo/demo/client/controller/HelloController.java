@@ -3,7 +3,7 @@ package lewiszlw.dubbo.demo.client.controller;
 import lewiszlw.dubbo.demo.iface.HelloRequestDTO;
 import lewiszlw.dubbo.demo.iface.HelloResponseDTO;
 import lewiszlw.dubbo.demo.iface.HelloService;
-import org.apache.dubbo.config.annotation.Reference;
+import org.apache.dubbo.config.annotation.DubboReference;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,10 +17,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloController {
 
-    @Reference(version = "1.0.0", group = "impl")
+    @DubboReference(version = "1.0.0", group = "impl")
     private HelloService implHelloService;
 
-    @Reference(version = "1.0.0", group = "impl2")
+    @DubboReference(version = "1.0.0", group = "impl2")
     private HelloService impl2HelloService;
 
     @RequestMapping("/hello")

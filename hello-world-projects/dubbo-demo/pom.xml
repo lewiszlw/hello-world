@@ -18,7 +18,7 @@
 	<properties>
 		<java.version>1.8</java.version>
 		<spring-boot.version>2.1.1.RELEASE</spring-boot.version>
-		<dubbo.version>2.7.1</dubbo.version>
+		<dubbo.version>2.7.15</dubbo.version>
 	</properties>
 
 	<dependencyManagement>
@@ -68,99 +68,22 @@
 				<version>${spring-boot.version}</version>
 			</dependency>
 
-			<dependency>
-				<groupId>org.apache.dubbo</groupId>
-				<artifactId>dubbo-spring-boot-starter</artifactId>
-				<version>2.7.1</version>
-			</dependency>
-
 			<!-- Dubbo -->
 			<dependency>
 				<groupId>org.apache.dubbo</groupId>
-				<artifactId>dubbo</artifactId>
-				<version>2.7.1</version>
-				<exclusions>
-					<exclusion>
-						<groupId>org.springframework</groupId>
-						<artifactId>spring</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>javax.servlet</groupId>
-						<artifactId>servlet-api</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>log4j</groupId>
-						<artifactId>log4j</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>org.springframework</groupId>
-						<artifactId>spring-context</artifactId>
-					</exclusion>
-				</exclusions>
+				<artifactId>dubbo-spring-boot-starter</artifactId>
+				<version>${dubbo.version}</version>
 			</dependency>
-
 			<!-- Zookeeper dependencies -->
 			<dependency>
 				<groupId>org.apache.dubbo</groupId>
 				<artifactId>dubbo-dependencies-zookeeper</artifactId>
-				<version>2.7.1</version>
+				<version>${dubbo.version}</version>
 				<type>pom</type>
 			</dependency>
 
-			 <!--Spring Boot-->
-			<!--<dependency>-->
-				<!--<groupId>org.springframework.boot</groupId>-->
-				<!--<artifactId>spring-boot-dependencies</artifactId>-->
-				<!--<version>${spring-boot.version}</version>-->
-				<!--<type>pom</type>-->
-				<!--<scope>import</scope>-->
-			<!--</dependency>-->
-<!---->
-			 <!--Aapche Dubbo-->
-			<!--<dependency>-->
-				<!--<groupId>org.apache.dubbo</groupId>-->
-				<!--<artifactId>dubbo-dependencies-bom</artifactId>-->
-				<!--<version>${dubbo.version}</version>-->
-				<!--<type>pom</type>-->
-				<!--<scope>import</scope>-->
-			<!--</dependency>-->
-<!---->
-			<!--<dependency>-->
-				<!--<groupId>org.apache.dubbo</groupId>-->
-				<!--<artifactId>dubbo</artifactId>-->
-				<!--<version>${dubbo.version}</version>-->
-				<!--<exclusions>-->
-					<!--<exclusion>-->
-						<!--<groupId>org.springframework</groupId>-->
-						<!--<artifactId>spring</artifactId>-->
-					<!--</exclusion>-->
-					<!--<exclusion>-->
-						<!--<groupId>javax.servlet</groupId>-->
-						<!--<artifactId>servlet-api</artifactId>-->
-					<!--</exclusion>-->
-					<!--<exclusion>-->
-						<!--<groupId>log4j</groupId>-->
-						<!--<artifactId>log4j</artifactId>-->
-					<!--</exclusion>-->
-				<!--</exclusions>-->
-			<!--</dependency>-->
 		</dependencies>
 	</dependencyManagement>
-
-	<!--<dependencies>-->
-		 <!--Dubbo Spring Boot Starter-->
-		<!--<dependency>-->
-			<!--<groupId>org.apache.dubbo</groupId>-->
-			<!--<artifactId>dubbo-spring-boot-starter</artifactId>-->
-			<!--<version>2.7.1</version>-->
-		<!--</dependency>-->
-<!---->
-		<!--<dependency>-->
-			<!--<groupId>org.apache.dubbo</groupId>-->
-			<!--<artifactId>dubbo</artifactId>-->
-		<!--</dependency>-->
-	<!--</dependencies>-->
-
 
 	<build>
         <pluginManagement>
