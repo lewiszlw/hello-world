@@ -28,6 +28,6 @@ HELP.md
 ### VS Code ###
 .vscode/
 
-nacos/
-dubbo-demo-nacos-server/target
-dubbo-demo-nacos-client/target
+/nacos/
+dubbo-demo-nacos-server/target/
+dubbo-demo-nacos-client/target/
