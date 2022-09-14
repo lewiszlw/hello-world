@@ -1,0 +1,1 @@
+org.springframework.context.ApplicationListener=lewiszlw.dubbo.demo.nacos.server.IpSetConfig

@@ -13,13 +13,18 @@
 		<module>dubbo-demo-client</module>
 		<module>dubbo-demo-interface</module>
 		<module>dubbo-demo-server</module>
+		<module>dubbo-demo-nacos-server</module>
+		<module>dubbo-demo-nacos-client</module>
 	</modules>
 
-	<properties>
-		<java.version>1.8</java.version>
-		<spring-boot.version>2.1.1.RELEASE</spring-boot.version>
-		<dubbo.version>2.7.15</dubbo.version>
-	</properties>
+    <properties>
+        <java.version>1.8</java.version>
+        <spring-boot.version>2.1.1.RELEASE</spring-boot.version>
+        <dubbo.version>2.7.15</dubbo.version>
+        <nacos.version>2.1.0</nacos.version>
+		<maven.compiler.source>8</maven.compiler.source>
+		<maven.compiler.target>8</maven.compiler.target>
+    </properties>
 
 	<dependencyManagement>
 		<dependencies>
@@ -55,13 +60,11 @@
 				<artifactId>spring-boot-starter</artifactId>
                 <version>${spring-boot.version}</version>
 			</dependency>
-
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-starter-web</artifactId>
 				<version>${spring-boot.version}</version>
 			</dependency>
-
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-starter-test</artifactId>
@@ -74,13 +77,41 @@
 				<artifactId>dubbo-spring-boot-starter</artifactId>
 				<version>${dubbo.version}</version>
 			</dependency>
-			<!-- Zookeeper dependencies -->
+			<!-- dubbo zookeeper -->
 			<dependency>
 				<groupId>org.apache.dubbo</groupId>
 				<artifactId>dubbo-dependencies-zookeeper</artifactId>
 				<version>${dubbo.version}</version>
 				<type>pom</type>
 			</dependency>
+
+			<!-- nacos -->
+			<dependency>
+				<groupId>com.alibaba.nacos</groupId>
+				<artifactId>nacos-client</artifactId>
+				<version>${nacos.version}</version>
+			</dependency>
+
+			<!-- https://mvnrepository.com/artifact/com.alibaba.boot/nacos-config-spring-boot-starter -->
+			<dependency>
+				<groupId>com.alibaba.boot</groupId>
+				<artifactId>nacos-config-spring-boot-starter</artifactId>
+				<version>0.2.12</version>
+			</dependency>
+			<!-- https://mvnrepository.com/artifact/com.alibaba.boot/nacos-config-spring-boot-actuator -->
+			<dependency>
+				<groupId>com.alibaba.boot</groupId>
+				<artifactId>nacos-config-spring-boot-actuator</artifactId>
+				<version>0.2.12</version>
+			</dependency>
+
+			<!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
+			<dependency>
+				<groupId>com.google.guava</groupId>
+				<artifactId>guava</artifactId>
+				<version>31.1-jre</version>
+			</dependency>
+
 
 		</dependencies>
 	</dependencyManagement>
