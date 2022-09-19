@@ -14,9 +14,16 @@
 ## hello-world-c - C 编程语言学习
 - [C11](https://github.com/lewiszlw/hello-world/tree/master/hello-world-c/c11)
 - [Socket](https://github.com/lewiszlw/hello-world/tree/master/hello-world-c/socket)
+- [pthread](https://github.com/lewiszlw/hello-world/tree/master/hello-world-c/pthread)
+- [process](https://github.com/lewiszlw/hello-world/tree/master/hello-world-c/process)
+
+## hello-world-cpp - C++ 编程语言学习
+- [C++11](https://github.com/lewiszlw/hello-world/tree/master/hello-world-cpp/cpp11)
 
 ## hello-world-python -  Python 编程语言学习
 - [appium](https://github.com/lewiszlw/hello-world/tree/master/hello-world-python/appium)
+
+## hello-world-rust - Rust 编程语言学习
 
 ## hello-world-projects - 框架、库等等项目实践
 - [Maven多模块项目实践](https://github.com/lewiszlw/hello-world/tree/master/hello-world-projects/multi-module)
@@ -39,6 +46,10 @@
 ## hello_world_flutter - Flutter 框架学习
 - [Whatsapp简单模仿](https://github.com/lewiszlw/hello-world/tree/master/hello_world_flutter/lib/apps/whatsapp)
 - [常见Widget使用](https://github.com/lewiszlw/hello-world/tree/master/hello_world_flutter/lib/widgets)
+
+## hello-world-source-code-notes - 源码阅读笔记
+
+## hello-world-assembly - 汇编语言学习
 
 ## 其他
 - [Java 实现各类设计模式](https://github.com/lewiszlw/design-pattern)
