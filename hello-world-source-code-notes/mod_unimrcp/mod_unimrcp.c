@@ -39,6 +39,7 @@
 #include "apt.h"
 #include "apt_log.h"
 #include "unimrcp_client.h"
+// lwznote unimrcp项目依赖libs mrcp/mrcpv2-transport
 #include "mrcp_application.h"
 #include "mrcp_session.h"
 #include "mrcp_message.h"
@@ -68,6 +69,7 @@
 #define CONFIG_FILE "unimrcp.conf"
 
 
+// lwznote: 对 mrcp_application_t 结构体包了一层
 /**
  * A UniMRCP application.
  */
@@ -85,6 +87,8 @@ struct mod_unimrcp_application {
 };
 typedef struct mod_unimrcp_application mod_unimrcp_application_t;
 
+
+// lwznote: unimrcp配置
 /**
  * module globals - global configuration and variables
  */
@@ -165,6 +169,8 @@ static switch_status_t profile_create(profile_t ** profile, const char *name, sw
 #define MY_EVENT_PROFILE_OPEN "unimrcp::profile_open"
 #define MY_EVENT_PROFILE_CLOSE "unimrcp::profile_close"
 
+
+// lwznote 解析 freeswitch autoload_configs/unimrcp.conf.xml 文件，在mod_unimrcp_do_config函数中被调用
 /**
  * Defines XML parsing instructions
  */
@@ -189,14 +195,35 @@ static switch_xml_config_item_t instructions[] = {
 	SWITCH_CONFIG_ITEM_END()
 };
 
+// lwznote freeswitch模块接口函数定义
+// #define SWITCH_MODULE_LOAD_FUNCTION(name) switch_status_t name SWITCH_MODULE_LOAD_ARGS
+// #define SWITCH_MODULE_RUNTIME_FUNCTION(name) switch_status_t name SWITCH_MODULE_RUNTIME_ARGS
+// #define SWITCH_MODULE_SHUTDOWN_FUNCTION(name) switch_status_t name SWITCH_MODULE_SHUTDOWN_ARGS
+// #define SWITCH_MODULE_LOAD_ARGS (switch_loadable_module_interface_t **module_interface, switch_memory_pool_t *pool)
+// #define SWITCH_MODULE_RUNTIME_ARGS (void)
+// #define SWITCH_MODULE_SHUTDOWN_ARGS (void)
 /* mod_unimrcp interface to FreeSWITCH */
 SWITCH_MODULE_SHUTDOWN_FUNCTION(mod_unimrcp_shutdown);
 SWITCH_MODULE_RUNTIME_FUNCTION(mod_unimrcp_runtime);
 SWITCH_MODULE_LOAD_FUNCTION(mod_unimrcp_load);
+// lwznote 定义freeswitch模块
+// #define SWITCH_MODULE_DEFINITION_EX(name, load, shutdown, runtime, flags)					\
+// static const char modname[] =  #name ;														\
+// SWITCH_MOD_DECLARE_DATA switch_loadable_module_function_table_t name##_module_interface = {	\
+// 	SWITCH_API_VERSION,																		\
+// 	load,																					\
+// 	shutdown,																				\
+// 	runtime,																				\
+// 	flags																					\
+// }
+//
+// #define SWITCH_MODULE_DEFINITION(name, load, shutdown, runtime)								\
+// 		SWITCH_MODULE_DEFINITION_EX(name, load, shutdown, runtime, SMODF_NONE)
 SWITCH_MODULE_DEFINITION(mod_unimrcp, mod_unimrcp_load, mod_unimrcp_shutdown, NULL);
 
 static switch_status_t mod_unimrcp_do_config();
 static mrcp_client_t *mod_unimrcp_client_create(switch_memory_pool_t *mod_pool);
+// lwznote 以下四个函数均仅用于 mod_unimrcp_client_create 函数体中
 static int process_rtp_config(mrcp_client_t *client, mpf_rtp_config_t *rtp_config, mpf_rtp_settings_t *rtp_settings, const char *param, const char *val, apr_pool_t *pool);
 static int process_mrcpv1_config(rtsp_client_config_t *config, mrcp_sig_settings_t *sig_settings, const char *param, const char *val, apr_pool_t *pool);
 static int process_mrcpv2_config(mrcp_sofia_client_config_t *config, mrcp_sig_settings_t *sig_settings, const char *param, const char *val, apr_pool_t *pool);
@@ -409,6 +436,7 @@ static void synth_speech_float_param_tts(switch_speech_handle_t *sh, char *param
 
 /* synthesizer's interface for UniMRCP */
 static apt_bool_t synth_message_handler(const mrcp_app_message_t *app_message);
+// lwznote 处理unimrcp server消息，当消息类型为 MRCP_APP_MESSAGE_TYPE_CONTROL 时调用（另一种为MRCP_APP_MESSAGE_TYPE_SIGNALING）
 static apt_bool_t synth_on_message_receive(mrcp_application_t *application, mrcp_session_t *session, mrcp_channel_t *channel, mrcp_message_t *message);
 static apt_bool_t synth_stream_write(mpf_audio_stream_t *stream, const mpf_frame_t *frame);
 
@@ -4429,6 +4457,7 @@ SWITCH_MODULE_LOAD_FUNCTION(mod_unimrcp_load)
 		return SWITCH_STATUS_TERM;
 	}
 
+    // lwznote modname 通过 SWITCH_MODULE_DEFINITION 宏定义为静态常量
 	/* connect my internal structure to the blank pointer passed to me */
 	*module_interface = switch_loadable_module_create_module_interface(pool, modname);
 
@@ -4549,6 +4578,7 @@ static apt_log_priority_e str_to_log_level(const char *level)
 	return APT_PRIO_DEBUG;
 }
 
+// lwznote 在 SWITCH_MODULE_LOAD_FUNCTION(mod_unimrcp_load) 被链接
 /**
  * Connects UniMRCP logging to FreeSWITCH
  * @return TRUE

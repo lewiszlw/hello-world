@@ -1,3 +1,10 @@
+源仓库地址：https://github.com/freeswitch/mod_unimrcp
+源仓库最新commit：https://github.com/freeswitch/mod_unimrcp/commit/769665bec80e80dd4dbc6ea37bf68053ccddc298。
+源码阅读笔记：1.根目录 READING_NOTES.md 2.全文搜索 lwznote
+
+源码阅读小技巧：
+1. 使用IDEA，右键 Folding -> Collapse All，将所有代码折叠显示
+
 # MRCP Module For FreeSWITCH
 
 ## How to build
