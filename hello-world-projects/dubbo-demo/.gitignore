@@ -31,3 +31,4 @@ HELP.md
 /nacos/
 dubbo-demo-nacos-server/target/
 dubbo-demo-nacos-client/target/
+standalone-logs/
