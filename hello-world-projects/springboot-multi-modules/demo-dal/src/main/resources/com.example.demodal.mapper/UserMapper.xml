@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demodal.mapper.UserMapper">
+    <resultMap id="userDO" type="com.example.demodal.mapper.entity.UserDO">
+        <id property="id" column="id"/>
+        <result property="username" column="username"/>
+        <result property="password" column="password"/>
+    </resultMap>
+
+    <select id="queryAllUsers" resultMap="userDO">
+        select *
+        from `user`
+    </select>
+</mapper>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b1709f60-bf9d-40bc-a3f6-0f8e5bf78557" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../hello-world-c/test.c" beforeDir="false" afterPath="$PROJECT_DIR$/../../hello-world-c/test.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hello-world-cpp/cpp11/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../hello-world-cpp/cpp11/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hello-world-csharp/hello-world-csharp/hello-world-csharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../../hello-world-csharp/hello-world-csharp/hello-world-csharp.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hello-world-java/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../hello-world-java/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hello-world-java/src/main/java/lewiszlw/test/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../hello-world-java/src/main/java/lewiszlw/test/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo-app/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo-app/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo-app/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo-app/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo-app/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo-app/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo-app/src/main/java/com/example/DemoAppApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo-app/src/main/java/com/example/demoapp/Child.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo-app/src/main/java/com/example/demoapp/Person.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo-app/src/main/java/com/example/demoapp/controller/UserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo-app/src/main/java/com/example/demoapp/response/WebResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo-app/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo-app/src/test/java/com/example/demoapp/DemoAppApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo-biz/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo-biz/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo-biz/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo-biz/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo-biz/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo-biz/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo-biz/src/main/java/com/example/demobiz/user/UserBiz.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo-dal/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo-dal/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo-dal/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo-dal/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo-dal/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo-dal/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo-dal/src/main/java/com/example/demodal/bean/UserDO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo-dal/src/main/java/com/example/demodal/config/MybatisConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo-dal/src/main/java/com/example/demodal/mapper/user/IUserMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hello-world-rust/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/../../hello-world-rust/Cargo.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hello-world-rust/src/test.rs" beforeDir="false" afterPath="$PROJECT_DIR$/../../hello-world-rust/src/test.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hello-world-rust/src/test2.rs" beforeDir="false" afterPath="$PROJECT_DIR$/../../hello-world-rust/src/test2.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hello_world_flutter/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../hello_world_flutter/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hello_world_flutter/.metadata" beforeDir="false" afterPath="$PROJECT_DIR$/../../hello_world_flutter/.metadata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hello_world_flutter/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../hello_world_flutter/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hello_world_flutter/android/app/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hello_world_flutter/android/app/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hello_world_flutter/android/app/src/main/java/tech/lewiszlw/helloworldflutter/MainActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hello_world_flutter/android/app/src/main/res/drawable/launch_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hello_world_flutter/android/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hello_world_flutter/android/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hello_world_flutter/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hello_world_flutter/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hello_world_flutter/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hello_world_flutter/android/app/src/main/res/values/styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hello_world_flutter/android/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hello_world_flutter/android/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hello_world_flutter/android/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hello_world_flutter/android/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hello_world_flutter/ios/Flutter/AppFrameworkInfo.plist" beforeDir="false" afterPath="$PROJECT_DIR$/../../hello_world_flutter/ios/Flutter/AppFrameworkInfo.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hello_world_flutter/ios/Flutter/Flutter.podspec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hello_world_flutter/ios/Flutter/flutter_export_environment.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../../hello_world_flutter/ios/Flutter/flutter_export_environment.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hello_world_flutter/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/../../hello_world_flutter/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hello_world_flutter/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata" beforeDir="false" afterPath="$PROJECT_DIR$/../../hello_world_flutter/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hello_world_flutter/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme" beforeDir="false" afterPath="$PROJECT_DIR$/../../hello_world_flutter/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hello_world_flutter/ios/Runner/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/../../hello_world_flutter/ios/Runner/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hello_world_flutter/lib/apps/startup_namer/basic_widgets.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../../hello_world_flutter/lib/apps/startup_namer/basic_widgets.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hello_world_flutter/lib/apps/whatsapp/main.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hello_world_flutter/lib/apps/whatsapp/models/chat_model.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hello_world_flutter/lib/apps/whatsapp/pages/chat_screen.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hello_world_flutter/lib/apps/whatsapp/whatsapp_home.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hello_world_flutter/lib/flutterguide/basic_widgets.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hello_world_flutter/lib/main.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hello_world_flutter/lib/widgets/counter.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hello_world_flutter/lib/widgets/layout_demo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../../hello_world_flutter/lib/widgets/layout_demo.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hello_world_flutter/lib/widgets/myapp.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hello_world_flutter/lib/widgets/shoppingcart.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hello_world_flutter/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../../hello_world_flutter/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hello_world_flutter/test/widget_test.dart" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="2FQxRmWyqHvFd5Gqf3KvzNZcJuj" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RunManager">
+    <configuration name="DemoAppApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="demo-app" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.DemoAppApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b1709f60-bf9d-40bc-a3f6-0f8e5bf78557" name="Changes" comment="" />
+      <created>1664438103825</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1664438103825</updated>
+      <workItem from="1664438105493" duration="845000" />
+      <workItem from="1664503531940" duration="2704000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
