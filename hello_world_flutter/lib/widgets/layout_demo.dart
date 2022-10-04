@@ -8,26 +8,22 @@ class LayoutDemo extends StatelessWidget {
       appBar: new AppBar(title: new Text("Layout demo"),),
       // Column: 垂直布局, Row: 水平布局
       body: new Column(children: <Widget>[
-        new RaisedButton(
+        new ElevatedButton(
           onPressed: () {print("点击红色按钮");},
           child: new Text("红色按钮"),
-          color: const Color(0xffcc0000),
+          // color: const Color(0xffcc0000),
         ),
         new Flexible(
           flex: 1,
           fit: FlexFit.tight,
-          child: new RaisedButton(
+          child: new ElevatedButton(
             onPressed: () {print("点击黄色按钮");},
             child: new Text("黄色按钮"),
-            color: const Color(0xfff1c232),
+            style: new ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.blue)),
+            // color: const Color(0xfff1c232),
           ),
         ),
-        new RaisedButton(
-          onPressed: () {print("点击粉色按钮");},
-          child: new Text("粉色按钮"),
-          color: const Color(0xffea9999),
-        )
-      ],),
+      ])
     );
   }
 }

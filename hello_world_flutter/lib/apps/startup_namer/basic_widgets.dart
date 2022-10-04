@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class MyAppBar extends StatelessWidget {
 
-  MyAppBar({this.title});
+  MyAppBar({required this.title});
 
   final Widget title;
 
@@ -32,7 +32,7 @@ class MyScaffold extends StatelessWidget {
     return Material(
       child: new Column(
         children: <Widget>[
-          new MyAppBar(title: new Text("Example title", style: Theme.of(context).primaryTextTheme.title,),),
+          new MyAppBar(title: new Text("Example title", style: Theme.of(context).primaryTextTheme.headline4,),),
           new Expanded(child: new Center(child: new Text("Hello world"),))
         ],
       ),
