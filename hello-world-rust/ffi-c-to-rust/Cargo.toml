@@ -5,3 +5,6 @@ version = "0.1.0"
 [lib]
 name = "double_input"
 crate-type = ["staticlib"]
+
+[dependencies]
+libc = "0.2.0"
