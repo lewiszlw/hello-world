@@ -33,10 +33,23 @@ path = "src/asr_server.rs"
 name = "asr_client"
 path = "src/asr_client.rs"
 
+[[bin]]
+name = "asr_client2"
+path = "src/asr_client2.rs"
+
+[[bin]]
+name = "asr_client3"
+path = "src/asr_client3.rs"
+
+[[bin]]
+name = "asr_client4"
+path = "src/asr_client4.rs"
+
 [dependencies]
 tokio = { version = "1.0", features = ["full"] }
 tokio-tungstenite = "0.17.2"
 futures-util = { version = "0.3", default-features = false, features = ["sink", "std"] }
+futures = "0.3.25"
 url = "2.0.0"
 futures-channel = "0.3"
 log = "0.4"  # 日志框架
@@ -44,3 +57,6 @@ env_logger = "0.9"  # 日志实现
 uuid = { version = "1.1.2", features = ["v4", "fast-rng", "macro-diagnostics"] }
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
+lazy_static = "1.4.0"
+flume = "0.10.14"
+websocket = "0.26.5"

@@ -18,9 +18,7 @@ use tokio_tungstenite::{connect_async, tungstenite::protocol::Message};
 
 #[tokio::main]
 async fn main() {
-    let connect_addr =
-        env::args().nth(1).unwrap_or_else(|| panic!("this program requires at least one argument"));
-
+    let connect_addr = "ws://127.0.0.1:9003".to_string();
     let url = url::Url::parse(&connect_addr).unwrap();
 
     let (sender, receiver) = futures_channel::mpsc::unbounded();
