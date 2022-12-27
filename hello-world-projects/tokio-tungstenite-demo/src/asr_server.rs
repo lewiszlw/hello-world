@@ -33,6 +33,7 @@ async fn accept_connection(peer: SocketAddr, stream: TcpStream) {
     let mut ws_stream = accept_async(stream).await.expect("Failed to accept ws");
     info!("New WebSocket connection: {}", peer);
 
+    let mut total_frames = 0;
     while let Some(item) = ws_stream.next().await {
         match item {
             Ok(msg) => {
@@ -45,8 +46,11 @@ async fn accept_connection(peer: SocketAddr, stream: TcpStream) {
                     },
                     Message::Binary(data) => {
                         info!("Received binary message, size {}", data.len());
+                        total_frames += 1;
                         // 发送asr识别结果
-                        ws_stream.send(Message::Text("asr识别结果".to_string())).await.unwrap();
+                        if total_frames % 10 == 0 {
+                            ws_stream.send(Message::Text("asr识别结果".to_string())).await.unwrap();
+                        }
                     }
                     Message::Close(_) => {
                         info!("Received close message.");

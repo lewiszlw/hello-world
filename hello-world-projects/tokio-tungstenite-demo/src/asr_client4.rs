@@ -4,6 +4,7 @@ use std::io::stdin;
 use std::sync::{Arc, Mutex};
 use std::sync::mpsc::{channel, TryRecvError};
 use std::thread;
+use std::time::Duration;
 
 use websocket::client::ClientBuilder;
 use websocket::{Message, OwnedMessage};
@@ -45,6 +46,7 @@ fn main() {
 					break;
 				}
 			}
+			std::thread::sleep(Duration::from_millis(5));
 		}
 	});
 
